@@ -1,5 +1,5 @@
 .intro {
-    padding-top: 105px; padding-bottom: 60px;
+    padding-top: 115px; padding-bottom: 60px;
     @include _992 {
         padding-top: 160px; padding-bottom: 69px;
     }
@@ -27,7 +27,7 @@
     // .intro__info
 
     &__info {
-        padding-top: 40px;
+        padding-top: 45px;
         text-align: center;
         @include _992 {
             text-align: left;

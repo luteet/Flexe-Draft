@@ -41,13 +41,11 @@
 
     &__list {
         
-        padding: 45px 15px 45px 15px;
+        padding: 45px 15px 20px 15px;
         @include _768 {
             padding: 65px 0 45px 0;
         }
 
-        /* display: grid;
-        grid-template-columns: repeat(6, auto); */
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -69,10 +67,9 @@
         flex: 0 1 50%;
         @media(min-width: 500px) {
             flex: 0 1 auto;
-            
         }
 
-        padding: 15px 0;
+        padding: 17px 0;
 
         @include _768 {
             padding: 15px;

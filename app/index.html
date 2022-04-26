@@ -143,6 +143,93 @@
                 </form>
             </div>
         </section>
+        <section class="services">
+            <div class="services__container _container _filter-wrapper">
+                <div class="services__header">
+                    <h2 class="services__section-title _section-title">
+                        Services
+                    </h2>
+                    <h3 class="services__section-subtitle _section-subtitle">
+                        Marketing Menu A La Carte
+                    </h3>
+                    <div class="services__tab-nav">
+                        <ul class="services__tab-nav--list filters-button-group">
+                            <li class="services__tab-nav--item">
+                                <button class="services__tab-nav--btn _filter-btn" data-filter=".group-1">
+                                    Traffic
+                                </button>
+                            </li>
+                            <li class="services__tab-nav--item">
+                                <button class="services__tab-nav--btn _filter-btn" data-filter=".group-2">
+                                    Awareness
+                                </button>
+                            </li>
+                            <li class="services__tab-nav--item">
+                                <button class="services__tab-nav--btn _filter-btn" data-filter=".group-3">
+                                    Community
+                                </button>
+                            </li>
+                            <li class="services__tab-nav--item">
+                                <button class="services__tab-nav--btn _filter-btn" data-filter=".group-4">
+                                    Packaging
+                                </button>
+                            </li>
+                            <li class="services__tab-nav--item">
+                                <button class="services__tab-nav--btn" data-filter=".group-5">
+                                    Listing
+                                </button>
+                            </li>
+                            <li class="services__tab-nav--item">
+                                <button class="services__tab-nav--btn" data-filter=".group-6">
+                                    Asia Promo
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="services__list grid">
+                    @@loop("html/home/services/_services-card.html", [
+                        {"group": 'group-1', "logo": '1', "title": 'Instagram Ads', "descr": 'Instagram has 5.91 billion visitors monthly.'},
+                        {"group": 'group-1', "logo": '2', "title": 'Google AdWords', "descr": 'Even though cryptocurrency has been banned from Google, you can still find ads there.'},
+                        {"group": 'group-1', "logo": '3', "title": 'Crypto Influencers', "descr": 'We have different approaches towards influencer marketing.'},
+                        {"group": 'group-1', "logo": '4', "title": 'Twitter Ads', "descr": 'Twitter has 6.24 billion visitors monthly'},
+                        {"group": 'group-1', "logo": '5', "title": 'Facebook Ads', "descr": 'Facebook has 21.54 billion visitors monthly'},
+                        {"group": 'group-1', "logo": '6', "title": 'Linkedin Ads', "descr": 'Linkedin has 1.33 billion visitors monthly'},
+                        {"group": 'group-2', "logo": '7', "title": 'Etherscan Ads', "descr": 'etherscan.io has over 15 million visitors monthly. top crypto traffic to your web'},
+                        {"group": 'group-2', "logo": '8', "title": 'Bscscan Ads', "descr": 'bscscan.com has over 37 million visitors monthly. top crypto traffic to your web.'},
+                        {"group": 'group-2', "logo": '9', "title": 'Reddit Ads', "descr": 'We know how to go through moderation there and launch a crypto traffic campaign to your web.'},
+                        {"group": 'group-2', "logo": '10', "title": 'Quora Ads', "descr": 'Quora has 550 million visitors monthly'},
+                        {"group": 'group-2', "logo": '11', "title": '4chan Ads', "descr": '4chan.org has 43 million visitors monthly and your banners will be shown inside / biz section.'},
+                        {"group": 'group-3', "logo": '12', "title": 'DappRadar Ads', "descr": 'Top crypto traffic to your web. Dapp Store for Discover, Track & Trade Everything DeFi, NFT and Gaming'},
+                        {"group": 'group-3', "logo": '13', "title": 'DEXTools Ads', "descr": 'Top crypto traffic to your web. Higly trusted and used trading APP in DEFI'},
+                        {"group": 'group-3', "logo": '14', "title": 'SEO', "descr": 'It is smart to start SEO promotion and create free organic traffic as soon as possible.'},
+                        {"group": 'group-3', "logo": '15', "title": 'Trackers Listing', "descr": 'These are so-called calendars of upcoming crypto projects.'},
+                        {"group": 'group-3', "logo": '16', "title": 'PR', "descr": 'We have direct access to contributors of 150+ business and crypto media'},
+                        {"group": 'group-4', "logo": '17', "title": 'Airdrop Promotion', "descr": '80% of airdrop participants perform several tasks (activities).'},
+                        {"group": 'group-4', "logo": '18', "title": 'Discord Promotion', "descr": 'Discord chat moderation 8 hours daily moderation or 24/7.'},
+                        {"group": 'group-4', "logo": '19', "title": 'Telegram Promotion', "descr": 'We can drive from 10 000 to 40 000 bots to your channel or chat (group)'},
+                        {"group": 'group-4', "logo": '20', "title": 'Bitcointalk Promotion', "descr": 'Bitcointalk.org is №1 crypto forum in the world with 4 million visitors per month.'},
+                        {"group": 'group-4', "logo": '21', "title": 'Social Media Content', "descr": 'Everyone checks your social media accounts before making the decision to invest.'},
+                        {"group": 'group-4', "logo": '22', "title": 'Cryptotalk Promotion', "descr": 'Cryptotalk.org is №2 crypto forum in the world (1 million unique visitors monthly)'},
+                        {"group": 'group-4', "logo": '23', "title": 'Community Management', "descr": 'Your telegram chat members expect answers without delays.'},
+                        {"group": 'group-5', "logo": '24', "title": 'Market Making', "descr": 'We can assist your project to get listed on leading Market Making platforms and help to increase you project liquidity'},
+                        {"group": 'group-5', "logo": '25', "title": 'Exchange Listing', "descr": 'We have partnership conditions for listing on 4 exchanges.'},
+                        {"group": 'group-5', "logo": '26', "title": 'CMC Listing', "descr": 'We can help you to get listed on coinmarketcap. Its monthly traffic is over 141 million unique visitors.'},
+                        {"group": 'group-5', "logo": '27', "title": 'CoinGecko Listing', "descr": 'We can help you to get listed on coingecko. Its monthly traffic is over 77 million unique visitors.'},
+                        {"group": 'group-5', "logo": '28', "title": 'DefiPulse Listing', "descr": 'We can help you to get listed on defipulse. Its monthly traffic is over 500 000 unique visitors'},
+                        {"group": 'group-5', "logo": '29', "title": 'Pancakeswap Listing', "descr": 'We can help you to get listed on pancakeswap. Its monthly traffic is over 16 million unique visitors.'},
+                        {"group": 'group-5', "logo": '30', "title": 'Uniswap Listing', "descr": 'We can help you to get listed on uniswap. Its monthly traffic is over 8 million unique visitors'},
+                        {"group": 'group-5', "logo": '31', "title": 'Uniswap Listing', "descr": 'We can help you to get listed on uniswap. Its monthly traffic is over 8 million unique visitors'},
+                        {"group": 'group-5', "logo": '32', "title": 'Japan Promotion', "descr": ''},
+                        {"group": 'group-6', "logo": '33', "title": 'China Promotion', "descr": ''},
+                        {"group": 'group-6', "logo": '34', "title": 'Korea Promotion', "descr": ''},
+                        {"group": 'group-6', "logo": '35', "title": 'Promo Video', "descr": 'People don’t want to waste time reading long white papers or studying your web.'},
+                        {"group": 'group-6', "logo": '36', "title": 'Landing Page', "descr": 'Crypto Landing Page Creation'},
+                        {"group": 'group-6', "logo": '37', "title": 'White Paper', "descr": 'We can create content for your white paper from scratch.'},
+                    ])
+                </ul>
+            </div>
+        </section>
     </main>
 
     @@include("html/_footer.html")

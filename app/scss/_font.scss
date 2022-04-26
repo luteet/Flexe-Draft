@@ -20,16 +20,14 @@
 ._title {
     
     font-family: var(--title-font);
-    font-weight: 700;
+    font-weight: 600;
+    line-height: 150%;
+    color: var(--dark);
 
     font-size: 1.125rem;
 
-    @include _768 {
-        font-size: 1.5rem;
-    }
-
     @include _992 {
-        font-size: 1.875rem;
+        font-size: 1.375rem;
     }
     
     &._min {
@@ -52,6 +50,7 @@
 }
 
 ._section-subtitle {
+    line-height: 150%;
     font-weight: 600;
     font-size: 1.5rem;
     color: var(--dark);

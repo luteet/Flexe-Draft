@@ -66,7 +66,7 @@ function webpConvert() {
 function scriptsLib() {
     return src([
         'node_modules/swiper/swiper-bundle.min.js', // Слайдер
-        'node_modules/shufflejs/dist/shuffle.min.js', // Tab Filter
+        'node_modules/isotope-layout/dist/isotope.pkgd.min.js', // Filter
         //'node_modules/sticky-js/dist/sticky.min.js' // Sticky
         //'node_modules/jquery/dist/jquery.js', // jQuery
         //'node_modules/slick-carousel/slick/slick.min.js', // Слайдер (jQuery)
