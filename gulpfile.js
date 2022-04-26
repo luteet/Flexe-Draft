@@ -135,11 +135,37 @@ function styles() {
         .pipe(browserSync.stream())
 }
 
+function stylesGlobal() {
+    return src('app/scss/style-global.scss')
+        .pipe(scss({outputStyle: 'compressed'}))
+        .pipe(mediaGroup())
+        .pipe(autoprefixer({
+            overrideBrowserslist: ['last 2 version'],
+            grid: true
+        }))
+        .pipe(minCSS())
+        .pipe(concat('style-global.min.css'))
+        .pipe(dest('dist/css'))
+        .pipe(browserSync.stream())
+}
+
 function stylesOriginal() {
     return src('app/scss/style.scss')
         .pipe(scss())
         .pipe(mediaGroup())
         .pipe(concat('style.css'))
+        .pipe(autoprefixer({
+            overrideBrowserslist: ['last 2 version'],
+            grid: true
+        }))
+        .pipe(dest('dist/css'))
+}
+
+function stylesGlobalOriginal() {
+    return src('app/scss/style-global.scss')
+        .pipe(scss())
+        .pipe(mediaGroup())
+        .pipe(concat('style-global.css'))
         .pipe(autoprefixer({
             overrideBrowserslist: ['last 2 version'],
             grid: true
@@ -201,7 +227,7 @@ function audio() {
 }
 
 function watching() {
-    watch(['app/scss/**/*.scss'], series(styles, stylesOriginal));
+    watch(['app/scss/**/*.scss'], series(styles, stylesOriginal, stylesGlobal, stylesGlobalOriginal));
     watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
     watch(['app/json/*.json'], json);
     watch(['app/video/*'], video);
@@ -214,6 +240,8 @@ function watching() {
 
 exports.styles = styles
 exports.stylesOriginal = stylesOriginal;
+exports.stylesGlobal = stylesGlobal
+exports.stylesGlobalOriginal = stylesGlobalOriginal;
 exports.watching = watching;
 exports.browsersync = browsersync;
 exports.scripts = scripts;
@@ -232,4 +260,4 @@ exports.htmlCompilation = htmlCompilation;
 
 exports.fonts = series(ttf2woffConvert, ttf2woff2Convert, fonts);
 exports.webp = series(cleanWebp, webpConvert);
-exports.default = parallel(/* images , */CSSlibBuild, styles, browsersync, watching, scriptsLib, scriptsMin, scripts, htmlCompilation, json);
+exports.default = parallel(/* images , */CSSlibBuild, styles, stylesGlobal, stylesGlobalOriginal, browsersync, watching, scriptsLib, scriptsMin, scripts, htmlCompilation, json);

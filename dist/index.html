@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- <link rel="SHORTCUT ICON" href="img/logo.svg" type="image/svg"> -->
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/style-global.min.css">
+    <link rel="preload" href="css/style.min.css" as="style" onload="this.rel='stylesheet'" media="all">
 </head>
 <body>
 
@@ -313,20 +314,6 @@
                     Expertise in numbers
                 </h3>
                 <ul class="about-us__list">
-                    <!-- <li class="about-us__item">
-                        <div class="about-us__item--image">
-                            <picture>
-                                <source srcset="img/home/about-us/item-img-1.webp" type="image/webp">
-                                <img src="img/home/about-us/item-img-1.png" alt="" loading="lazy" width="108" class="about-us__item--img">
-                            </picture>
-                        </div>
-                        <strong class="about-us__item--value">
-
-                        </strong>
-                        <h4 class="about-us__item--name">
-
-                        </h4>
-                    </li> -->
                     <li class="about-us__item">
     <div class="about-us__item--image">
         <picture>
@@ -408,6 +395,77 @@
 </li>
                 </ul>
                     
+            </div>
+        </section>
+        <section class="who-are-you">
+            <div class="who-are-you__container _container">
+                <div class="who-are-you__info">
+                    <h2 class="who-are-you__info--section-title _section-title">
+                        Who Are You?
+                    </h2>
+                    <h3 class="who-are-you__info--section-subtitle">
+                        Click on type your project
+                    </h3>
+                    <form action="#" class="who-are-you__info--tab-section who-are-you__tab-section">
+                        <fieldset class="who-are-you__tab-section--fieldset">
+                            <ul class="who-are-you__tab-section--list">
+                                <!-- <li class="who-are-you__tab-section--li">
+                                    <input type="radio" id="project-@@radio-id" name="project" value="@@radio-value" class="who-are-you__tab-section--radio-input">
+                                    <label for="project-@@radio-id" class="who-are-you__tab-section--radio-label">
+                                        @@radio-text
+                                    </label>
+                                </li> -->
+                                <li class="who-are-you__tab-section--li">
+    <input type="radio" id="project-1" name="project" value="gamefi" class="who-are-you__tab-section--radio-input">
+    <label for="project-1" class="who-are-you__tab-section--radio-label">
+        Gamefi
+    </label>
+</li><li class="who-are-you__tab-section--li">
+    <input type="radio" id="project-2" name="project" value="nft" class="who-are-you__tab-section--radio-input">
+    <label for="project-2" class="who-are-you__tab-section--radio-label">
+        NFT
+    </label>
+</li><li class="who-are-you__tab-section--li">
+    <input type="radio" id="project-3" name="project" value="metaverse" class="who-are-you__tab-section--radio-input">
+    <label for="project-3" class="who-are-you__tab-section--radio-label">
+        Metaverse
+    </label>
+</li><li class="who-are-you__tab-section--li">
+    <input type="radio" id="project-4" name="project" value="ico" class="who-are-you__tab-section--radio-input">
+    <label for="project-4" class="who-are-you__tab-section--radio-label">
+        ICO
+    </label>
+</li><li class="who-are-you__tab-section--li">
+    <input type="radio" id="project-5" name="project" value="defi" class="who-are-you__tab-section--radio-input">
+    <label for="project-5" class="who-are-you__tab-section--radio-label">
+        DeFi
+    </label>
+</li><li class="who-are-you__tab-section--li">
+    <input type="radio" id="project-6" name="project" value="ieo" class="who-are-you__tab-section--radio-input">
+    <label for="project-6" class="who-are-you__tab-section--radio-label">
+        IEO
+    </label>
+</li><li class="who-are-you__tab-section--li">
+    <input type="radio" id="project-7" name="project" value="sto" class="who-are-you__tab-section--radio-input">
+    <label for="project-7" class="who-are-you__tab-section--radio-label">
+        STO
+    </label>
+</li><li class="who-are-you__tab-section--li">
+    <input type="radio" id="project-8" name="project" value="fintech" class="who-are-you__tab-section--radio-input">
+    <label for="project-8" class="who-are-you__tab-section--radio-label">
+        Fintech
+    </label>
+</li>
+                            </ul>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="who-are-you__image">
+                    <picture>
+                        <source srcset="img/home/who-are-you/image.webp" type="image/webp">
+                        <img src="img/home/who-are-you/image.jpg" loading="lazy" alt="" width="300" class="who-are-you__image--img">
+                    </picture>
+                </div>
             </div>
         </section>
     </main>

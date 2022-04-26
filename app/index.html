@@ -73,20 +73,6 @@
                     Expertise in numbers
                 </h3>
                 <ul class="about-us__list">
-                    <!-- <li class="about-us__item">
-                        <div class="about-us__item--image">
-                            <picture>
-                                <source srcset="img/home/about-us/item-img-1.webp" type="image/webp">
-                                <img src="img/home/about-us/item-img-1.png" alt="" loading="lazy" width="108" class="about-us__item--img">
-                            </picture>
-                        </div>
-                        <strong class="about-us__item--value">
-
-                        </strong>
-                        <h4 class="about-us__item--name">
-
-                        </h4>
-                    </li> -->
                     @@loop("html/home/about-us/_about-us-item.html", [
                     {"image": '1', "min": '', "value": '500+', "name": 'Clients'},
                     {"image": '2', "min": '', "value": '4+', "name": 'Years of Experience'},
@@ -97,6 +83,46 @@
                     ])
                 </ul>
                     
+            </div>
+        </section>
+        <section class="who-are-you">
+            <div class="who-are-you__container _container">
+                <div class="who-are-you__info">
+                    <h2 class="who-are-you__info--section-title _section-title">
+                        Who Are You?
+                    </h2>
+                    <h3 class="who-are-you__info--section-subtitle">
+                        Click on type your project
+                    </h3>
+                    <form action="#" class="who-are-you__info--tab-section who-are-you__tab-section">
+                        <fieldset class="who-are-you__tab-section--fieldset">
+                            <ul class="who-are-you__tab-section--list">
+                                <!-- <li class="who-are-you__tab-section--li">
+                                    <input type="radio" id="project-@@radio-id" name="project" value="@@radio-value" class="who-are-you__tab-section--radio-input">
+                                    <label for="project-@@radio-id" class="who-are-you__tab-section--radio-label">
+                                        @@radio-text
+                                    </label>
+                                </li> -->
+                                @@loop("html/home/who-are-you/_who-are-you-radio-btn.html", [
+                                    {"text": 'Gamefi', "value": 'gamefi', "id": '1'},
+                                    {"text": 'NFT', "value": 'nft', "id": '2'},
+                                    {"text": 'Metaverse', "value": 'metaverse', "id": '3'},
+                                    {"text": 'ICO', "value": 'ico', "id": '4'},
+                                    {"text": 'DeFi', "value": 'defi', "id": '5'},
+                                    {"text": 'IEO', "value": 'ieo', "id": '6'},
+                                    {"text": 'STO', "value": 'sto', "id": '7'},
+                                    {"text": 'Fintech', "value": 'fintech', "id": '8'},
+                                ])
+                            </ul>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="who-are-you__image">
+                    <picture>
+                        <source srcset="img/home/who-are-you/image.webp" type="image/webp">
+                        <img src="img/home/who-are-you/image.jpg" loading="lazy" alt="" width="300" class="who-are-you__image--img">
+                    </picture>
+                </div>
             </div>
         </section>
     </main>
