@@ -1,4 +1,4 @@
-    <footer class="footer">
+    <footer class="footer _dark-bg">
         <div class="footer__container _container _min">
             <a href="#" class="footer__logo">
                 <img src="img/logo-light.svg" width="150" loading="lazy" alt="" class="footer__logo--img">
@@ -99,14 +99,14 @@
                 </span>
                 <ul class="footer__social--list">
                     <li class="footer__social--item">
-                        <a href="#" class="footer__social--link">
+                        <a href="#" class="footer__social--link" title="Telegram">
                             <svg viewBox="0 0 20 16">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M18.5969 0.079025C18.425 0.119918 16.3622 0.927602 14.0128 1.87388C11.6635 2.82026 7.68142 4.41337 5.16391 5.41423C0.581037 7.23618 0 7.52344 0 7.96651C0 8.43114 0.186698 8.53287 2.16433 9.14485C3.23733 9.47693 4.30282 9.77476 4.53203 9.80659C5.40113 9.92745 5.8012 9.72188 9.96577 7.01409C14.2647 4.21897 14.4421 4.11362 14.8482 4.11362C15.0826 4.11362 15.1108 4.14545 15.0496 4.34024C15.0104 4.46483 14.8699 4.70687 14.7375 4.87799C14.4907 5.19678 11.091 8.37554 9.68916 9.5982C8.4404 10.6874 8.39665 11.0845 9.43568 11.9026C10.5442 12.7756 15.0169 15.616 15.5889 15.8103C16.6644 16.1758 17.3775 16.0116 17.6717 15.331C17.9062 14.7884 20.0055 1.9046 20 1.04162C19.9964 0.476874 19.8588 0.242194 19.4411 0.0886943C19.125 -0.0274374 19.0484 -0.0283439 18.5969 0.079025Z" fill="white"/>
                             </svg>
                         </a>
                     </li>
                     <li class="footer__social--item">
-                        <a href="#" class="footer__social--link">
+                        <a href="#" class="footer__social--link" title="LinkedIn">
                             <svg viewBox="0 0 310 310">
                                 <g>
                                     <path fill="#FFFFFF" d="M72.2,99.7H9.9c-2.8,0-5,2.2-5,5v199.9c0,2.8,2.2,5,5,5h62.2c2.8,0,5-2.2,5-5V104.7
@@ -121,7 +121,7 @@
                         </a>
                     </li>
                     <li class="footer__social--item">
-                        <a href="#" class="footer__social--link">
+                        <a href="#" class="footer__social--link" title="Twitter">
                             <svg viewBox="0 0 512 512">
                                 <path fill="#FFFFFF" d="M500.4,94.8c-8,3.6-16.3,6.6-24.8,9c10-11.3,17.6-24.6,22.3-39.2c1-3.3,0-6.8-2.7-9
                                     c-2.7-2.1-6.4-2.4-9.4-0.6c-17.9,10.6-37.3,18.3-57.6,22.8c-20.4-20-48.2-31.4-76.9-31.4c-60.6,0-109.9,49.3-109.9,109.9
@@ -135,7 +135,7 @@
                         </a>
                     </li>
                     <li class="footer__social--item">
-                        <a href="#" class="footer__social--link">
+                        <a href="#" class="footer__social--link" title="Facebook">
                             <svg viewBox="0 0 310 310">
                                 <path fill="#FFFFFF" d="M81.7,165.1h34V305c0,2.8,2.2,5,5,5h57.6c2.8,0,5-2.2,5-5V165.8h39.1c2.5,0,4.7-1.9,5-4.4l5.9-51.5
                                     c0.2-1.4-0.3-2.8-1.2-3.9c-0.9-1.1-2.3-1.7-3.7-1.7h-45V72c0-9.7,5.2-14.7,15.6-14.7c1.5,0,29.4,0,29.4,0c2.8,0,5-2.2,5-5V5
@@ -145,7 +145,7 @@
                         </a>
                     </li>
                     <li class="footer__social--item">
-                        <a href="#" class="footer__social--link">
+                        <a href="#" class="footer__social--link" title="Instagram">
                             <svg viewBox="0 0 280.3 280.3">
                                 <g>
                                     <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M159.1,111.3c-1.9-1.2-5.1-2.9-7.2-3.6c-1.7-0.6-4.6-1.4-6.5-1.7
@@ -184,6 +184,16 @@
             </div>
         </div>
     </footer>
+
+    <svg style="visibility: hidden; position: absolute;" width="0" height="0" version="1.1">
+        <defs>
+              <filter id="round">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>    
+                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo"></feColorMatrix>
+                  <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
+              </filter>
+          </defs>
+      </svg>
 
     <script src="js/libs.min.js"></script>
     <script src="js/main.min.js"></script>

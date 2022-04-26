@@ -55,6 +55,10 @@
     font-size: 1.5rem;
     color: var(--dark);
 
+    &._light {
+        color: var(--white);
+    }
+
     @include _768 {
         font-size: 2rem;
     }

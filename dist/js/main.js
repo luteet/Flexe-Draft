@@ -173,14 +173,13 @@ window.onresize = resize;
 
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <slider> -=-=-=-=-=-=-=-=-=-=-=-=
-/*
-let slider = new Swiper('.__slider', {
+
+let doneProjectsSlider = new Swiper('.done-projects__slider', {
   
     spaceBetween: 30,
     slidesPerView: 1,
-    centeredSlides: false,
 
-    loop: true,
+    /* loop: true, */
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -190,18 +189,51 @@ let slider = new Swiper('.__slider', {
         prevEl: '.swiper-button-prev',
     },
     breakpoints: {
-      992: {
+      1200: {
         slidesPerView: 3,
-        centeredSlides: true,
-    
       },
-      600: {
+      800: {
         slidesPerView: 2,
-        centeredSlides: false,
       },
     }
-}); 
-*/
+});
+
+let clientsSlider = new Swiper('.clients__slider', {
+  
+  
+  slidesPerView: 2,
+
+  grid: {
+    rows: 3,
+  },
+
+  /* loop: true, */
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+  navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    800: {
+      slidesPerView: 4,
+      grid: {
+        rows: 3,
+      },
+    },
+    1200: {
+      slidesPerView: 6,
+      grid: {
+        rows: 4,
+      },
+    },
+    
+  }
+});
+
 // =-=-=-=-=-=-=-=-=-=-=-=- </slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
 
