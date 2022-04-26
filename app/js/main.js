@@ -52,7 +52,7 @@ body.addEventListener('click', function (event) {
     
       window.scroll({
         left: 0,
-        top: (section[0]) ? section.offsetTop : 0,
+        top: (section) ? section.offsetTop : 0,
         behavior: 'smooth'
       })
     
