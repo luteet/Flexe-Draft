@@ -247,7 +247,7 @@
                 <div class="intro__image">
                     <picture>
                         <source srcset="img/home/intro/image.webp" type="image/webp">
-                        <img src="img/home/intro/image.jpg" alt="" width="1096" class="intro__image--img">
+                        <img src="img/home/intro/image.jpg" alt="" width="1096" height="734" class="intro__image--img">
                     </picture>
                 </div>
                 <div class="intro__info">
@@ -397,75 +397,93 @@
                     
             </div>
         </section>
-        <section class="who-are-you">
+        <section class="who-are-you _section-min-padding">
             <div class="who-are-you__container _container">
-                <div class="who-are-you__info">
-                    <h2 class="who-are-you__info--section-title _section-title">
-                        Who Are You?
-                    </h2>
-                    <h3 class="who-are-you__info--section-subtitle">
-                        Click on type your project
-                    </h3>
-                    <form action="#" class="who-are-you__info--tab-section who-are-you__tab-section">
-                        <fieldset class="who-are-you__tab-section--fieldset">
-                            <ul class="who-are-you__tab-section--list">
-                                <!-- <li class="who-are-you__tab-section--li">
-                                    <input type="radio" id="project-@@radio-id" name="project" value="@@radio-value" class="who-are-you__tab-section--radio-input">
-                                    <label for="project-@@radio-id" class="who-are-you__tab-section--radio-label">
-                                        @@radio-text
-                                    </label>
-                                </li> -->
-                                <li class="who-are-you__tab-section--li">
-    <input type="radio" id="project-1" name="project" value="gamefi" class="who-are-you__tab-section--radio-input">
-    <label for="project-1" class="who-are-you__tab-section--radio-label">
+                <form action="#" class="who-are-you__info">
+                    <div class="who-are-you__info--header">
+                        <h2 class="who-are-you__info--section-title _section-title">
+                            Who Are You?
+                        </h2>
+                        <h3 class="who-are-you__info--section-subtitle _section-subtitle">
+                            Click on type on your project
+                        </h3>
+                        <div class="who-are-you__info--project who-are-you__project">
+                            <fieldset class="who-are-you__project--fieldset">
+                                <ul class="who-are-you__project--list">
+                                    <li class="who-are-you__project--item">
+    <input type="radio" id="project-1" name="project" value="gamefi" class="who-are-you__project--radio-input">
+    <label for="project-1" class="who-are-you__project--radio-label">
         Gamefi
     </label>
-</li><li class="who-are-you__tab-section--li">
-    <input type="radio" id="project-2" name="project" value="nft" class="who-are-you__tab-section--radio-input">
-    <label for="project-2" class="who-are-you__tab-section--radio-label">
+</li><li class="who-are-you__project--item">
+    <input type="radio" id="project-2" name="project" value="nft" class="who-are-you__project--radio-input">
+    <label for="project-2" class="who-are-you__project--radio-label">
         NFT
     </label>
-</li><li class="who-are-you__tab-section--li">
-    <input type="radio" id="project-3" name="project" value="metaverse" class="who-are-you__tab-section--radio-input">
-    <label for="project-3" class="who-are-you__tab-section--radio-label">
+</li><li class="who-are-you__project--item">
+    <input type="radio" id="project-3" name="project" value="metaverse" class="who-are-you__project--radio-input">
+    <label for="project-3" class="who-are-you__project--radio-label">
         Metaverse
     </label>
-</li><li class="who-are-you__tab-section--li">
-    <input type="radio" id="project-4" name="project" value="ico" class="who-are-you__tab-section--radio-input">
-    <label for="project-4" class="who-are-you__tab-section--radio-label">
+</li><li class="who-are-you__project--item">
+    <input type="radio" id="project-4" name="project" value="ico" class="who-are-you__project--radio-input">
+    <label for="project-4" class="who-are-you__project--radio-label">
         ICO
     </label>
-</li><li class="who-are-you__tab-section--li">
-    <input type="radio" id="project-5" name="project" value="defi" class="who-are-you__tab-section--radio-input">
-    <label for="project-5" class="who-are-you__tab-section--radio-label">
+</li><li class="who-are-you__project--item">
+    <input type="radio" id="project-5" name="project" value="defi" class="who-are-you__project--radio-input">
+    <label for="project-5" class="who-are-you__project--radio-label">
         DeFi
     </label>
-</li><li class="who-are-you__tab-section--li">
-    <input type="radio" id="project-6" name="project" value="ieo" class="who-are-you__tab-section--radio-input">
-    <label for="project-6" class="who-are-you__tab-section--radio-label">
+</li><li class="who-are-you__project--item">
+    <input type="radio" id="project-6" name="project" value="ieo" class="who-are-you__project--radio-input">
+    <label for="project-6" class="who-are-you__project--radio-label">
         IEO
     </label>
-</li><li class="who-are-you__tab-section--li">
-    <input type="radio" id="project-7" name="project" value="sto" class="who-are-you__tab-section--radio-input">
-    <label for="project-7" class="who-are-you__tab-section--radio-label">
+</li><li class="who-are-you__project--item">
+    <input type="radio" id="project-7" name="project" value="sto" class="who-are-you__project--radio-input">
+    <label for="project-7" class="who-are-you__project--radio-label">
         STO
     </label>
-</li><li class="who-are-you__tab-section--li">
-    <input type="radio" id="project-8" name="project" value="fintech" class="who-are-you__tab-section--radio-input">
-    <label for="project-8" class="who-are-you__tab-section--radio-label">
+</li><li class="who-are-you__project--item">
+    <input type="radio" id="project-8" name="project" value="fintech" class="who-are-you__project--radio-input">
+    <label for="project-8" class="who-are-you__project--radio-label">
         Fintech
     </label>
 </li>
-                            </ul>
+                                </ul>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="who-are-you__info--image who-are-you__image">
+                        <picture>
+                            <source srcset="img/home/who-are-you/image.webp" type="image/webp">
+                            <img src="img/home/who-are-you/image.jpg" loading="lazy" alt="" width="750" height="750" class="who-are-you__image--img">
+                        </picture>
+                    </div>
+                    <div class="who-are-you__info--footer">
+                        <fieldset class="who-are-you__project--fieldset">
+                            <div class="who-are-you__project--block">
+                                <ul class="who-are-you__project--ul">
+                                    <li class="who-are-you__project--li">
+                                        Apply your learnings and take the right investment decisions.
+                                    </li>
+                                    <li class="who-are-you__project--li">
+                                        Explore the research hub for better-informed decisions.
+                                    </li>
+                                    <li class="who-are-you__project--li">
+                                        Quickly evaluate traders and projects.
+                                    </li>
+                                </ul>
+                            </div>
                         </fieldset>
-                    </form>
-                </div>
-                <div class="who-are-you__image">
-                    <picture>
-                        <source srcset="img/home/who-are-you/image.webp" type="image/webp">
-                        <img src="img/home/who-are-you/image.jpg" loading="lazy" alt="" width="300" class="who-are-you__image--img">
-                    </picture>
-                </div>
+                        <fieldset class="who-are-you__project--fieldset">
+                            <button class="who-are-you__project--btn _btn" type="submit">
+                                Get a personal offer
+                            </button>
+                        </fieldset>
+                    </div>
+                </form>
             </div>
         </section>
     </main>

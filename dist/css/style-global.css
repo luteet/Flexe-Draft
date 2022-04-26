@@ -930,7 +930,7 @@ body._popup-active {
   transition: -webkit-transform 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
-  z-index: 99;
+  z-index: 150;
 }
 
 .header._active {
