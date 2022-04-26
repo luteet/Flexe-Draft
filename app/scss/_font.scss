@@ -1,8 +1,10 @@
 
 ._main-title {
     font-family: var(--title-font);
-    font-weight: 700;
-    line-height: 115%;
+    font-weight: 600;
+    line-height: 130%;
+
+    margin: 0;
 
     font-size: 1.875rem;
 
@@ -11,7 +13,7 @@
     }
 
     @include _992 {
-        font-size: 3.125rem;
+        font-size: 4.375rem;
     }
 }
 
@@ -38,7 +40,29 @@
 ._section-title {
 
     font-family: var(--title-font);
-    font-weight: 700;
+    font-weight: 500;
+    font-size: 1rem;
+
+    background: var(--gradient);
+    background-clip: text;
+    color: transparent;
+
+    text-transform: uppercase;
+
+}
+
+._section-subtitle {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--dark);
+
+    @include _768 {
+        font-size: 2rem;
+    }
+
+    @include _992 {
+        font-size: 2.5rem;
+    }
 
 }
 

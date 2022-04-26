@@ -32,7 +32,77 @@ body.addEventListener('click', function (event) {
       })
     }
 
+
+
+    let scrollBtn = thisTarget.closest('._scroll-btn');
+    if(scrollBtn) {
+      event.preventDefault();
+      let section;
+    
+      try {
+        section = document.querySelector(scrollBtn.getAttribute('href'));
+      } catch {
+        section = false;
+      }
+      
+    
+      menu.forEach(elem => {
+        elem.classList.remove('_active')
+      })
+    
+      window.scroll({
+        left: 0,
+        top: (section[0]) ? section.offsetTop : 0,
+        behavior: 'smooth'
+      })
+    
+    }
+
 })
+
+
+// =-=-=-=-=-=-=-=-=-=-=-=- <media events> -=-=-=-=-=-=-=-=-=-=-=-=
+
+let resizeCheck = {}, windowSize;
+
+function resizeCheckFunc(size, minWidth, maxWidth) {
+  if (windowSize <= size && (resizeCheck[String(size)] == true || resizeCheck[String(size)] == undefined) && resizeCheck[String(size)] != false) {
+    resizeCheck[String(size)] = false;
+    maxWidth(); // < size
+  }
+
+  if (windowSize >= size && (resizeCheck[String(size)] == false || resizeCheck[String(size)] == undefined) && resizeCheck[String(size)] != true) {
+    resizeCheck[String(size)] = true;
+    minWidth(); // > size
+  }
+}
+
+function resize() {
+
+  windowSize = window.innerWidth
+
+  resizeCheckFunc(992,
+    function () {  // screen > 992px
+
+      menu.forEach(elem => {
+        elem.classList.remove('_active')
+    })
+
+  },
+  function () {  // screen < 992px
+
+
+
+  });
+
+}
+
+resize();
+
+window.onresize = resize;
+
+// =-=-=-=-=-=-=-=-=-=-=-=- </media events> -=-=-=-=-=-=-=-=-=-=-=-=
+
 
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <slider> -=-=-=-=-=-=-=-=-=-=-=-=

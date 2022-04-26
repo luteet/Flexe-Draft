@@ -27,6 +27,7 @@
     "normalize.css": "^8.0.1",
     "sass": "^1.45.0",
     "shufflejs": "^6.0.0",
+    "smoothscroll-polyfill": "^0.4.4",
     "swiper": "^8.1.4"
   },
   "dependencies": {

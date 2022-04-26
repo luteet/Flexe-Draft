@@ -33,8 +33,6 @@ body {
     overflow: hidden;
 
     flex: 1 0 auto;
-
-    padding-top: 200px;
 }
 
 ._container {
@@ -60,6 +58,13 @@ body {
         padding: 150px 0px;
     }
 
+}
+
+._section-min-padding {
+    padding: 38px 0;
+    @include _768 {
+        padding: 50px 0;
+    }
 }
 
 ._bg-img {
@@ -136,17 +141,63 @@ body {
 ._btn {
     display: inline-block;
     
-    padding: 7px 15px;
+    padding: 16px 63px;
 
-    background-color: var(--accent);
+    background: var(--gradient);
+    background-clip: text;
     color: var(--white);
 
-    border-radius: 5px;
+    font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 135%;
 
-    transition: all .2s ease-in-out;
+    border-radius: 100px;
+
+    transition: color .2s ease-in-out;
+
+    position: relative;
+    z-index: 2;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        border: 3px solid transparent;
+        border-radius: 50px;
+        background: linear-gradient(45deg,#1C4EFF,#1C92FF) border-box;
+        -webkit-mask:
+            linear-gradient(#fff 0 0) padding-box, 
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: destination-out;
+        mask-composite: exclude;
+
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        border-radius: 100px;
+
+        background: var(--gradient);
+
+        opacity: 1;
+        transition: opacity .2s ease-in-out;
+        z-index: -1;
+    }
 
     &:hover {
-        
+        color: transparent;
+        &::after {
+            opacity: 0;
+        }
+        &::before {
+            opacity: 1;
+        }
     }
 }
 
@@ -240,4 +291,8 @@ body {
     &:hover {
         color: var(--white);
     }
+}
+
+._user-none {
+    user-select: none; -webkit-user-drag: none;
 }

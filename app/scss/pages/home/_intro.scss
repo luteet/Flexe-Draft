@@ -1,3 +1,211 @@
 .intro {
-    
+    padding-top: 105px; padding-bottom: 60px;
+    @include _992 {
+        padding-top: 160px; padding-bottom: 69px;
+    }
+    background: var(--light-gray-2);
+
+    min-height: 100vh;
+
+    position: relative;
+
+    // .intro__container
+
+    &__container {
+        display: grid;
+        grid-template-columns: 100%;
+        @include _992 {
+            grid-template-columns: 65% 35%;
+        }
+        
+        @media(min-width: 1150px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        
+    }
+
+    // .intro__info
+
+    &__info {
+        padding-top: 40px;
+        text-align: center;
+        @include _992 {
+            text-align: left;
+            padding-top: 108px;
+        }
+
+        position: relative;
+        z-index: 2;
+        
+        @include _992 {
+            grid-column: 1/1; grid-row: 1/1;
+        }
+
+        
+        // .intro__info--title
+
+        &--title {
+            & br {
+                display: none;
+            }
+            @include _992 {
+                & br {
+                    display: inherit;
+                }
+            }
+        }
+
+        // .intro__info--subtitle
+
+        &--subtitle {
+            padding-top: 14px;
+
+            font-weight: 600;
+            font-size: 1.125rem;
+
+            @include _768 {
+                font-size: 2rem;
+            }
+
+            @include _992 {
+                font-size: 2.5rem;
+            }
+
+            line-height: 150%;
+            color: var(--gray);
+        }
+
+        // .intro__info--footer
+
+        &--footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding-top: 23px;
+            @include _992 {
+                align-items: flex-start;
+                padding-top: 48px;
+            }
+
+            margin: -10px;
+
+            
+        }
+
+        // .intro__info--link
+
+        &--link {
+            margin: 10px;
+        }
+
+        // .intro__info--scroll-down
+
+        &--scroll-down {
+            margin: 10px;
+            @media(min-width: 1150px) {
+                position: absolute;
+                left: 0; bottom: 23px;
+            }
+
+            font-weight: 400;
+            font-size: 1rem;
+            color: var(--gray);
+
+            display: inline-flex;
+            align-items: center;
+
+            transition: color .2s ease-in-out;
+            &:hover {
+                color: var(--accent);
+            }
+        }
+
+        // .intro__info--scroll-down-icon
+
+        &--scroll-down-icon {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        // .intro__info--social
+
+        &--social {
+        }
+    }
+
+    // .intro__social
+
+    &__social {
+        position: fixed;
+        right: 16px; bottom: 16px;
+        @include _992 {
+            right: 65px; bottom: 40px;
+        }
+        // .intro__social--list
+
+        &--list {
+        }
+
+        // .intro__social--item
+
+        &--item {
+            &:not(:first-child) {
+                margin-top: 24px;
+            }
+        }
+
+        // .intro__social--link
+
+        &--link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 48px; height: 48px;
+            @include _992 {
+                width: 60px; height: 60px;
+            }
+            border-radius: 50%;
+            background: var(--white);
+
+            box-shadow: 0 10px 20px 0px rgba(#01132F, 0.15);
+
+            & svg {
+                width: 50%; height: 50%;
+            }
+        }
+    }
+
+    // .intro__image
+
+    &__image {
+        text-align: center;
+        margin-right: -15px; margin-left: -15px;
+        @include _992 {
+            margin-right: 0; margin-left: 0;
+            grid-column: 1/3; grid-row: 1/1;
+            text-align: right;
+        }
+        
+        // .intro__image--img
+
+        &--img {
+            max-width: 400px;
+            
+            @include _992 {
+                margin-right: 10px;
+                max-width: 45%;
+            }
+            @media(min-width: 1150px) {
+                max-width: 58.2%;
+            }
+            
+            
+            
+            width: 100%;
+            object-fit: contain;
+        }
+    }
 }
+
