@@ -137,8 +137,71 @@ window.onresize = resize;
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
-let doneProjectsSlider = new Swiper('.done-projects__slider', {
-  
+document.addEventListener("DOMContentLoaded", function(event) {
+    
+  let doneProjectsSlider = new Swiper('.done-projects__slider', {
+    
+      spaceBetween: 30,
+      slidesPerView: 1,
+
+      /* loop: true, */
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        1200: {
+          slidesPerView: 3,
+        },
+        800: {
+          slidesPerView: 2,
+        },
+      }
+  });
+
+  let clientsSlider = new Swiper('.clients__slider', {
+    
+    
+    slidesPerView: 2,
+
+    grid: {
+      rows: 3,
+    },
+
+    /* loop: true, */
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      800: {
+        slidesPerView: 4,
+        grid: {
+          rows: 3,
+        },
+      },
+      1200: {
+        slidesPerView: 6,
+        grid: {
+          rows: 4,
+        },
+      },
+      
+    }
+  });
+
+
+  let testimonialsSlider = new Swiper('.testimonials__slider', {
+    
     spaceBetween: 30,
     slidesPerView: 1,
 
@@ -159,67 +222,8 @@ let doneProjectsSlider = new Swiper('.done-projects__slider', {
         slidesPerView: 2,
       },
     }
-});
-
-let clientsSlider = new Swiper('.clients__slider', {
+  });
   
-  
-  slidesPerView: 2,
-
-  grid: {
-    rows: 3,
-  },
-
-  /* loop: true, */
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-
-  navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-  },
-  breakpoints: {
-    800: {
-      slidesPerView: 4,
-      grid: {
-        rows: 3,
-      },
-    },
-    1200: {
-      slidesPerView: 6,
-      grid: {
-        rows: 4,
-      },
-    },
-    
-  }
-});
-
-
-let testimonialsSlider = new Swiper('.testimonials__slider', {
-  
-  spaceBetween: 30,
-  slidesPerView: 1,
-
-  /* loop: true, */
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-  },
-  breakpoints: {
-    1200: {
-      slidesPerView: 3,
-    },
-    800: {
-      slidesPerView: 2,
-    },
-  }
 });
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </slider> -=-=-=-=-=-=-=-=-=-=-=-=

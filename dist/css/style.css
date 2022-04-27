@@ -1251,10 +1251,13 @@
   grid-template-columns: 100%;
 }
 
-.contact-us__copy--input {
+.contact-us__copy--label {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: 1/1;
+}
+
+.contact-us__copy--input {
   width: 100%;
   background: rgba(255, 255, 255, 0.3);
   color: var(--white);
@@ -2067,6 +2070,7 @@
   .get-access__image--img {
     max-width: 100%;
     width: 100%;
+    height: auto;
   }
 
   .contact-us__social {

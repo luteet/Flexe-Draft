@@ -151,8 +151,11 @@
         display: grid;
         grid-template-columns: 100%;
 
-        &--input {
+        &--label {
             grid-area: 1/1;
+        }
+
+        &--input {
 
             width: 100%;
 

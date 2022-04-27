@@ -13,8 +13,8 @@
     <header class="header">
         <div class="header__container _container">
             <div class="header__logo">
-                <a href="index.html" class="header__logo--link">
-                    <img src="img/logo.svg" alt="" width="150" height="48" class="header__logo--img">
+                <a href="index.html" class="header__logo--link" aria-label="Logo">
+                    <img src="img/logo.svg" alt="Logo" width="150" height="48" class="header__logo--img">
                 </a>
             </div>
             <nav class="header__nav">
@@ -2116,7 +2116,7 @@
             <div class="get-access__image _txt-center">
                 <picture>
                     <source srcset="img/home/get-access/image.webp" type="image/webp">
-                    <img src="img/home/get-access/image.jpg" alt="" width="1000" class="get-access__image--img">
+                    <img src="img/home/get-access/image.jpg" alt="" width="1000" height="800" loading="lazy" class="get-access__image--img">
                 </picture>
             </div>
         </section>
@@ -2155,8 +2155,10 @@
                     </li>
                     <li class="contact-us__social--item _full">
                         <div class="contact-us__social--copy contact-us__copy _copy">
-                            <input type="text" readonly name="e-mail" value="hello@flexe.io" class="contact-us__copy--input _copy-input">
-                            <button class="contact-us__copy--btn _copy-btn" type="button">
+                            <label class="contact-us__copy--label">
+                                <input type="text" readonly name="e-mail" value="hello@flexe.io" class="contact-us__copy--input _copy-input">
+                            </label>
+                            <button class="contact-us__copy--btn _copy-btn" type="button" title="Copy email">
                                 <svg viewBox="0 0 22 24">
                                     <path d="M0 8.40072C0 6.41253 1.64162 4.80078 3.66666 4.80078H11.9256C12.8981 4.80078 13.8307 5.18006 14.5184 5.85518L16.0371 7.34632C16.7248 8.02144 17.1111 8.9371 17.1111 9.89186V20.4005C17.1111 22.3887 15.4695 24.0004 13.4444 24.0004H3.66666C1.64162 24.0004 0 22.3887 0 20.4005V8.40072Z" fill="#BBCDFF"/>
                                     <path d="M4.88867 3.59994C4.88867 1.61175 6.53029 0 8.55533 0H15.5921C16.5646 0 17.4972 0.379278 18.1848 1.0544L20.9258 3.74552C21.6135 4.42064 21.9998 5.33629 21.9998 6.29106V15.5997C21.9998 17.5879 20.3581 19.1997 18.3331 19.1997H8.55533C6.53029 19.1997 4.88867 17.5879 4.88867 15.5997V3.59994Z" fill="url(#copy-icon)"/>
