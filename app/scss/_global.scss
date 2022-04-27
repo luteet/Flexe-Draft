@@ -65,6 +65,10 @@ body {
     background: var(--dark-gradient);
 }
 
+._accent-bg {
+    background: var(--accent);
+}
+
 ._bg-img {
     position: absolute;
     left: 0; top: 0;

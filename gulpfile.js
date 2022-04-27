@@ -74,6 +74,9 @@ function scriptsLib() {
         //'node_modules/wowjs/dist/wow.min.js', // Анимация
         //'node_modules/nouislider/dist/nouislider.min.js', // Кастомный input[range]
         'node_modules/smoothscroll-polyfill/dist/smoothscroll.min.js', // Полифил для window.scroll()
+
+        'app/js/filter.js', // Фильтр div блоков
+        'app/js/copyToClipboard.js', // Копирование данных из input в буфер обмена
     ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())

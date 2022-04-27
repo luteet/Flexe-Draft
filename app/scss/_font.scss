@@ -47,24 +47,45 @@
 
     text-transform: uppercase;
 
+    &._light {
+        color: var(--white);
+        background-clip: initial;
+        background: transparent;
+    }
+
 }
 
 ._section-subtitle {
     line-height: 150%;
     font-weight: 600;
     font-size: 1.5rem;
+    &._large {
+        font-weight: 500;
+        font-size: 1.5625rem;
+    }
     color: var(--dark);
 
     &._light {
         color: var(--white);
     }
 
+    & strong {
+        color: var(--accent);
+    }
+
     @include _768 {
         font-size: 2rem;
+        &._large {
+            font-weight: 600;
+            font-size: 2.5rem;
+        }
     }
 
     @include _992 {
         font-size: 2.5rem;
+        &._large {
+            font-size: 3rem;
+        }
     }
 
 }

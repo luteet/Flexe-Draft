@@ -15,7 +15,7 @@
         // .about-us__decor--img
 
         &--img {
-            width: 500px;
+            width: 500px; height: auto;
             @include _768 {
                 max-width: 662px;
                 width: 100%;

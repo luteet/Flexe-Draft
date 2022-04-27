@@ -1,0 +1,138 @@
+.get-access {
+    padding-top: 64px; padding-bottom: 94px;
+    @include _768 {
+        padding-top: 124px; padding-bottom: 0px;
+    }
+    background: var(--light-gray-2);
+    // .get-access__container
+
+    &__container {
+        position: relative;
+        z-index: 2;
+    }
+
+    // .get-access__section-title
+
+    &__section-title {
+    }
+
+    // .get-access__list
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        margin: -8px;
+        @media(min-width: 500px) {
+            margin: -10px;
+        }
+
+        padding-top: 32px;
+        @include _768 {
+            padding-top: 64px;
+        }
+    }
+
+    // .get-access__item
+
+    &__item {
+        flex: 0 1 50%;
+        padding: 8px;
+        @media(min-width: 500px) {
+            flex: 1 1 auto;
+            padding: 10px;
+        }
+
+        &._accent &--body {
+            position: relative;
+            border: 0;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0; top: 0;
+                width: 100%; height: 100%;
+                border: 1px solid transparent;
+                border-radius: var(--br);
+                background: linear-gradient(45deg,#1C4EFF,#1C92FF) border-box;
+                -webkit-mask:
+                    linear-gradient(#fff 0 0) padding-box, 
+                    linear-gradient(#fff 0 0);
+                -webkit-mask-composite: destination-out;
+                mask-composite: exclude;
+            }
+        }
+        // .get-access__item--body
+
+        &--body {
+            border-radius: var(--br);
+            border: 1px solid var(--light-gray);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 72px;
+            padding: 12px;
+        }
+
+        // .get-access__item--logo
+
+        &--logo {
+        }
+
+        // .get-access__item--img
+
+        &--img {
+            object-fit: contain;
+            width: 105px; height: 25px;
+            @media(min-width: 500px) {
+                width: 110px; height: 25px;
+            }
+        }
+
+        // .get-access__item--value
+
+        &--value {
+            background: var(--gradient);
+            background-clip: text;
+            color: transparent;
+
+            font-weight: 600;
+            font-size: 1.75rem;
+            
+        }
+
+        // .get-access__item--name
+
+        &--name {
+            font-weight: 400;
+            font-size: 0.75rem;
+            @media(min-width: 360px) {
+                font-size: 0.875rem;
+            }
+            color: var(--gray);
+        }
+    }
+
+    // .get-access__image
+
+    &__image {
+        display: none;
+        @include _768 {
+            display: block;
+            margin-top: -50px;
+        }
+        
+        // .get-access__image--img
+
+        &--img {
+            @include _768 {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+

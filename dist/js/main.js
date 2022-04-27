@@ -6,58 +6,6 @@ const body = document.querySelector('body'),
     header = document.querySelector('.header');
 
 
-var iso = new Isotope( '.grid', {
-  itemSelector: '._filter-item',
-  layoutMode: 'fitRows'
-});
-
-// filter functions
-var filterFns = {
-  // show if number is greater than 50
-  numberGreaterThan50: function( itemElem ) {
-    var number = itemElem.querySelector('.number').textContent;
-    return parseInt( number, 10 ) > 50;
-  },
-  // show if name ends with -ium
-  ium: function( itemElem ) {
-    var name = itemElem.querySelector('.name').textContent;
-    return name.match( /ium$/ );
-  }
-};
-
-// bind filter button click
-var filtersElem = document.querySelector('.filters-button-group');
-filtersElem.addEventListener( 'click', function( event ) {
-  // only work with buttons
-  if ( !matchesSelector( event.target, 'button' ) ) {
-    return;
-  }
-  var filterValue = event.target.getAttribute('data-filter');
-  // use matching filter function
-  /* filterValue = filterValue; */
-  iso.arrange({ filter: filterValue });
-  
-});
-
-// change is-checked class on buttons
-var buttonGroups = document.querySelectorAll('.button-group');
-for ( var i=0, len = buttonGroups.length; i < len; i++ ) {
-  var buttonGroup = buttonGroups[i];
-  radioButtonGroup( buttonGroup );
-}
-
-function radioButtonGroup( buttonGroup ) {
-  buttonGroup.addEventListener( 'click', function( event ) {
-    // only work with buttons
-    if ( !matchesSelector( event.target, 'button' ) ) {
-      return;
-    }
-    buttonGroup.querySelector('.is-checked').classList.remove('is-checked');
-    event.target.classList.add('is-checked');
-  });
-}
-
-
 let thisTarget;
 body.addEventListener('click', function (event) {
 
@@ -118,7 +66,22 @@ body.addEventListener('click', function (event) {
       })
 
       filterBtn.classList.add('_active');
-      
+
+    }
+
+
+
+    let copyBtn = thisTarget.closest('._copy-btn');
+    if (copyBtn) {
+      event.preventDefault();
+
+      let input = copyBtn.parentNode.querySelector('._copy-input');
+
+      if (input) {
+
+        copyToClipboard(input)
+
+      }
 
     }
 
@@ -231,6 +194,31 @@ let clientsSlider = new Swiper('.clients__slider', {
       },
     },
     
+  }
+});
+
+
+let testimonialsSlider = new Swiper('.testimonials__slider', {
+  
+  spaceBetween: 30,
+  slidesPerView: 1,
+
+  /* loop: true, */
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    1200: {
+      slidesPerView: 3,
+    },
+    800: {
+      slidesPerView: 2,
+    },
   }
 });
 

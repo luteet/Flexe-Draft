@@ -63,7 +63,7 @@
                 <div class="about-us__decor">
                     <picture>
                         <source srcset="img/home/about-us/decor.webp" type="image/webp">
-                        <img src="img/home/about-us/decor.png" alt="" width="0" loading="lazy" class="about-us__decor--img _user-none">
+                        <img src="img/home/about-us/decor.png" alt="" width="0" height="0" loading="lazy" class="about-us__decor--img _user-none">
                     </picture>
                 </div>
                 <h2 class="about-us__section-title _section-title">
@@ -155,7 +155,7 @@
                     <div class="services__tab-nav">
                         <ul class="services__tab-nav--list filters-button-group">
                             <li class="services__tab-nav--item">
-                                <button class="services__tab-nav--btn _filter-btn" data-filter=".group-1">
+                                <button class="services__tab-nav--btn _filter-btn _active" data-filter=".group-1">
                                     Traffic
                                 </button>
                             </li>
@@ -175,12 +175,12 @@
                                 </button>
                             </li>
                             <li class="services__tab-nav--item">
-                                <button class="services__tab-nav--btn" data-filter=".group-5">
+                                <button class="services__tab-nav--btn _filter-btn" data-filter=".group-5">
                                     Listing
                                 </button>
                             </li>
                             <li class="services__tab-nav--item">
-                                <button class="services__tab-nav--btn" data-filter=".group-6">
+                                <button class="services__tab-nav--btn _filter-btn" data-filter=".group-6">
                                     Asia Promo
                                 </button>
                             </li>
@@ -231,9 +231,9 @@
             </div>
         </section>
         <section class="done-projects _section-padding">
-            <div class="done-projects__slider swiper">
-                <div class="done-projects__slider--header">
-                    <div class="done-projects__slider--container _container">
+            <div class="done-projects__slider swiper _slider">
+                <div class="done-projects__slider--header _slider-header">
+                    <div class="done-projects__slider--container _container _slider-header-container">
                         <div class="done-projects__slider--info">
                             <h2 class="done-projects__section-title _section-title">
                                 case studies
@@ -248,7 +248,13 @@
                         </div>
                     </div>
                 </div>
-                <ul class="done-projects__slider--list swiper-wrapper">
+                <div class="done-projects__slider--footer _slider-footer">
+                    <a href="#" class="done-projects__slider--btn _btn _alt">
+                        Check out all cases
+                        <span class="done-projects__slider--btn-icon _btn-icon _icon-arrow-down"></span>
+                    </a>
+                </div>
+                <ul class="done-projects__slider--list swiper-wrapper _slider-list">
                     @@loop("html/home/done-projects/_done-projects-card.html", [
                         {"logo": '1', "descr": 'Made Twitter Influencers: the number of followers increased from 17,000 to 41,300.', "slider": 'swiper-slide'},
                         {"logo": '2', "descr": 'Raise awareness of the presale; attract active users and investors.', "slider": 'swiper-slide'},
@@ -257,14 +263,8 @@
                         {"logo": '1', "descr": 'Made Twitter Influencers: the number of followers increased from 17,000 to 41,300.', "slider": 'swiper-slide'},
                     ])
                 </ul>
-                <div class="done-projects__slider--pagination">
+                <div class="done-projects__slider--pagination _slider-pagination">
                     <div class="swiper-pagination"></div>
-                </div>
-                <div class="done-projects__slider--footer">
-                    <a href="#" class="done-projects__slider--btn _btn _alt">
-                        Check out all cases
-                        <span class="done-projects__slider--btn-icon _btn-icon _icon-arrow-down"></span>
-                    </a>
                 </div>
             </div>
         </section>
@@ -363,6 +363,79 @@
                 </div>
             </div>
         </section>
+        <section class="testimonials _section-padding">
+            <div class="testimonials__slider swiper _slider">
+                <div class="testimonials__header _slider-header">
+                    <div class="testimonials__header--container _container _slider-header-container">
+                        <h2 class="testimonials__section-title _section-subtitle">
+                            Testimonials
+                        </h2>
+                        <div class="testimonials__controls slider-controls">
+                            <div class="testimonials__slider--arrow slider-arrow _prev swiper-button-prev"></div>
+                            <div class="testimonials__slider--arrow slider-arrow _next swiper-button-next"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonials__footer _slider-footer">
+                    <a href="#" class="testimonials__btn _btn _alt">
+                        Check out 100+ tweets
+                        <span class="testimonials__btn--btn-icon _btn-icon _icon-arrow-down"></span>
+                    </a>
+                </div>
+                <ul class="testimonials__list swiper-wrapper _slider-list">
+                    @@loop("html/home/testimonials/_testimonials-card.html", [
+                        {"avatar": '1', "name": 'Predict Vision', "username": '@PredictVision',
+                        "text": '👏 🙏 Many thanks to our marketing partner Flexe.io @flexe_io for helping us run airdrop campaign and increase 20% our community!',
+                        "slider": 'swiper-slide'},
+                        {"avatar": '2', "name": 'CRYPTOCRΞWZ.ETH', "username": '@cryptocrewz',
+                        "text": 'Great to be working with an experienced NFT marketing agency. flexe.io<br><br>Check them out!',
+                        "slider": 'swiper-slide'},
+                        {"avatar": '1', "name": 'Predict Vision', "username": '@PredictVision',
+                        "text": '👏 🙏 Many thanks to our marketing partner Flexe.io @flexe_io for helping us run airdrop campaign and increase 20% our community!',
+                        "slider": 'swiper-slide'},
+                        {"avatar": '2', "name": 'CRYPTOCRΞWZ.ETH', "username": '@cryptocrewz',
+                        "text": 'Great to be working with an experienced NFT marketing agency. flexe.io<br><br>Check them out!',
+                        "slider": 'swiper-slide'},
+                        {"avatar": '1', "name": 'Predict Vision', "username": '@PredictVision',
+                        "text": '👏 🙏 Many thanks to our marketing partner Flexe.io @flexe_io for helping us run airdrop campaign and increase 20% our community!',
+                        "slider": 'swiper-slide'},
+                        {"avatar": '2', "name": 'CRYPTOCRΞWZ.ETH', "username": '@cryptocrewz',
+                        "text": 'Great to be working with an experienced NFT marketing agency. flexe.io<br><br>Check them out!',
+                        "slider": 'swiper-slide'},
+                    ])
+                </ul>
+                <div class="testimonials__pagination _slider-pagination">
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+        <section class="get-access">
+            <div class="get-access__container _container">
+                <h2 class="get-access__section-title _section-subtitle _txt-center">
+                    Get Access To <strong>150+</strong><br> Business & Crypto Media
+                </h2>
+                <ul class="get-access__list">
+                    @@loop("html/home/get-access/_get-access-item.html", [
+                        {"logo": '1'},
+                        {"logo": '2'},
+                        {"logo": '3'},
+                        {"logo": '4'},
+                        {"logo": '5'},
+                    ])
+                    @@include("html/home/get-access/_get-access-item-v2.html", {
+                        "value": '+150',
+                        "name": 'Resources more',
+                    })
+                </ul>
+            </div>
+            <div class="get-access__image _txt-center">
+                <picture>
+                    <source srcset="img/home/get-access/image.webp" type="image/webp">
+                    <img src="img/home/get-access/image.jpg" alt="" width="1000" class="get-access__image--img">
+                </picture>
+            </div>
+        </section>
+        @@include("html/home/contact-us/_contact-us-section.html")
     </main>
 
     @@include("html/_footer.html")
