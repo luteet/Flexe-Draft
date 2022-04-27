@@ -1,0 +1,43 @@
+@@include("html/_header.html", {
+    "clients": '',
+    "testimonials": '',
+    "case": '_active',
+    "team": '',
+})
+
+<main class="wrapper">
+    <section class="case-all card-page">
+        <div class="case-all__container _container">
+            <div class="case-all__header card-page__header _txt-center">
+                <h2 class="case-all__section-title card-page__section-title _section-title">
+                    case studies
+                </h2>
+                <h3 class="case-all__section-subtitle card-page__section-subtitle _section-subtitle">
+                    Study what we have<br> done before
+                </h3>
+            </div>
+            <ul class="case-all__list card-page__list">
+                @@loop("html/home/done-projects/_done-projects-card.html", [
+                        {"logo": '1', "descr": 'Made Twitter Influencers: the number of followers increased from 17,000 to 41,300.', "slider": 'card-page__item'},
+                        {"logo": '2', "descr": 'Raise awareness of the presale; attract active users and investors.', "slider": 'card-page__item'},
+                        {"logo": '1', "descr": 'Made Twitter Influencers: the number of followers increased from 17,000 to 41,300.', "slider": 'card-page__item'},
+                        {"logo": '2', "descr": 'Raise awareness of the presale; attract active users and investors.', "slider": 'card-page__item'},
+                        {"logo": '1', "descr": 'Made Twitter Influencers: the number of followers increased from 17,000 to 41,300.', "slider": 'card-page__item'},
+                        {"logo": '2', "descr": 'Raise awareness of the presale; attract active users and investors.', "slider": 'card-page__item'},
+                        {"logo": '1', "descr": 'Made Twitter Influencers: the number of followers increased from 17,000 to 41,300.', "slider": 'card-page__item'},
+                        {"logo": '2', "descr": 'Raise awareness of the presale; attract active users and investors.', "slider": 'card-page__item'},
+                        {"logo": '1', "descr": 'Made Twitter Influencers: the number of followers increased from 17,000 to 41,300.', "slider": 'card-page__item'},
+                        
+                    ])
+            </ul>
+            <div class="case-all__footer card-page__footer">
+                @@include("html/_card-page-pagination.html", {
+                    "class": 'case-all__pagination',
+                })
+            </div>
+        </div>
+    </section>
+    @@include("html/home/contact-us/_contact-us-section.html")
+</main>
+
+@@include("html/_footer.html")

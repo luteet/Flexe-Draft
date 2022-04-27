@@ -470,30 +470,13 @@
 
 .services__list {
   padding-top: 20px;
-  /* display: grid;
-  grid-template-columns: repeat(4,auto);
-  gap: 20px; */
-  /* display: flex;
-  flex-wrap: wrap; */
 }
 
 .services__card {
-  /* flex: 0 1 auto;
-  width: 25%; */
   width: 100%;
 }
 
-/* ._filter-item {
-
-    transition: width .2s ease-in-out, height .2s ease-in-out, opacity .2s ease-in-out;
-    &._hidden {
-        width: 0; height: 0;
-        opacity: 0;
-    }
-} */
-
 .services-card__body {
-  /* min-width: 200px; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1640,16 +1623,16 @@
 }
 
 @media (min-width: 360px) {
-  .services__section-subtitle {
-    padding-right: 150px;
-  }
-
   .get-access__item--name {
     font-size: 0.875rem;
   }
 }
 
 @media (min-width: 390px) {
+  .services__section-subtitle {
+    padding-right: 150px;
+  }
+
   .testimonials-card__header--info {
     -ms-grid-columns: 64px auto;
     grid-template-columns: 64px auto;
