@@ -1,0 +1,68 @@
+@@include("html/_header.html", {
+    "clients": '',
+    "testimonials": '_active',
+    "case": '',
+    "team": '',
+})
+
+<main class="wrapper">
+    <section class="testimonials-page card-page">
+        <div class="card-page__container _container">
+            <div class="testimonials-page__header card-page__header _txt-center">
+                <h2 class="testimonials-page__section-title card-page__section-title _section-title">
+                    Testimonials
+                </h2>
+                <h3 class="testimonials-page__section-subtitle card-page__section-subtitle _section-subtitle">
+                    Our users have many<br> reasons to choose Flexe.io
+                </h3>
+            </div>
+            <ul class="testimonials-page__list card-page__list">
+                @@loop("html/home/testimonials/_testimonials-card.html", [
+                    {"avatar": '1', "name": 'Predict Vision', "username": '@PredictVision',
+                    "text": '👏 🙏 Many thanks to our marketing partner Flexe.io @flexe_io for helping us run airdrop campaign and increase 20% our community!',
+                    "slider": 'card-page__item'},
+                    {"avatar": '2', "name": 'CRYPTOCRΞWZ.ETH', "username": '@cryptocrewz',
+                    "text": 'Great to be working with an experienced NFT marketing agency. flexe.io<br><br>Check them out!',
+                    "slider": 'card-page__item'},
+                    {"avatar": '1', "name": 'Predict Vision', "username": '@PredictVision',
+                    "text": '👏 🙏 Many thanks to our marketing partner Flexe.io @flexe_io for helping us run airdrop campaign and increase 20% our community!',
+                    "slider": 'card-page__item'},
+                    {"avatar": '2', "name": 'CRYPTOCRΞWZ.ETH', "username": '@cryptocrewz',
+                    "text": 'Great to be working with an experienced NFT marketing agency. flexe.io<br><br>Check them out!',
+                    "slider": 'card-page__item'},
+                    {"avatar": '1', "name": 'Predict Vision', "username": '@PredictVision',
+                    "text": '👏 🙏 Many thanks to our marketing partner Flexe.io @flexe_io for helping us run airdrop campaign and increase 20% our community!',
+                    "slider": 'card-page__item'},
+                    {"avatar": '2', "name": 'CRYPTOCRΞWZ.ETH', "username": '@cryptocrewz',
+                    "text": 'Great to be working with an experienced NFT marketing agency. flexe.io<br><br>Check them out!',
+                    "slider": 'card-page__item'},
+                    {"avatar": '1', "name": 'Predict Vision', "username": '@PredictVision',
+                    "text": '👏 🙏 Many thanks to our marketing partner Flexe.io @flexe_io for helping us run airdrop campaign and increase 20% our community!',
+                    "slider": 'card-page__item'},
+                    {"avatar": '2', "name": 'CRYPTOCRΞWZ.ETH', "username": '@cryptocrewz',
+                    "text": 'Great to be working with an experienced NFT marketing agency. flexe.io<br><br>Check them out!',
+                    "slider": 'card-page__item'},
+                    {"avatar": '1', "name": 'Predict Vision', "username": '@PredictVision',
+                    "text": '👏 🙏 Many thanks to our marketing partner Flexe.io @flexe_io for helping us run airdrop campaign and increase 20% our community!',
+                    "slider": 'card-page__item'},
+                    {"avatar": '2', "name": 'CRYPTOCRΞWZ.ETH', "username": '@cryptocrewz',
+                    "text": 'Great to be working with an experienced NFT marketing agency. flexe.io<br><br>Check them out!',
+                    "slider": 'card-page__item'},
+                    {"avatar": '1', "name": 'Predict Vision', "username": '@PredictVision',
+                    "text": '👏 🙏 Many thanks to our marketing partner Flexe.io @flexe_io for helping us run airdrop campaign and increase 20% our community!',
+                    "slider": 'card-page__item'},
+                    {"avatar": '2', "name": 'CRYPTOCRΞWZ.ETH', "username": '@cryptocrewz',
+                    "text": 'Great to be working with an experienced NFT marketing agency. flexe.io<br><br>Check them out!',
+                    "slider": 'card-page__item'},
+                ])
+            </ul>
+            <div class="testimonials-page__footer card-page__footer">
+                @@include("html/_card-page-pagination.html", {
+                    "class": 'testimonials-page__pagination',
+                })
+            </div>
+        </div>
+    </section>
+</main>
+
+@@include("html/_footer.html")
