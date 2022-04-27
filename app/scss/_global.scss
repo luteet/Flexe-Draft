@@ -263,6 +263,28 @@ body {
         }
     }
 
+    &._light {
+
+        padding: 14px 63px;
+
+        &::before, &::after {
+            display: none;
+        }
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 120%;
+
+        color: var(--accent);
+        background-clip: inherit;
+        background: var(--white);
+
+        transition: background .2s ease-in-out;
+
+        &:hover {
+            background: var(--accent-light);
+        }
+    }
+
     &-icon {
         display: inline-block;
         transform: rotate(-90deg);
@@ -372,4 +394,41 @@ body {
 
 ._user-none {
     user-select: none; -webkit-user-drag: none;
+}
+
+._ul-check li {
+    display: flex;
+    align-items: center;
+
+    padding: 8px 0;
+
+    &::before {
+        content: "\e903";
+
+        font-family: 'flexe-draft' !important;
+        speak: never;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+    
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        font-size: 10px;
+        color: var(--white);
+
+        display: inline-flex;
+        justify-content: flex-end;
+
+        flex: 0 0 16px;
+        width: 16px; height: 16px;
+
+        padding-top: 1px;
+        margin-right: 10px;
+
+        border-radius: 50%;
+        background: var(--gradient);
+    }
 }

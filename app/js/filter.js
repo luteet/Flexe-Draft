@@ -1,7 +1,9 @@
-var iso = new Isotope( '.grid', {
+if(document.querySelector('.grid')) {
+
+  var iso = new Isotope( '.grid', {
     itemSelector: '._filter-item',
     layoutMode: 'fitRows'
-  });
+});
   
   // filter functions
   var filterFns = {
@@ -53,3 +55,5 @@ var iso = new Isotope( '.grid', {
       event.target.classList.add('is-checked');
     });
   }
+
+}

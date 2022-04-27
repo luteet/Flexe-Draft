@@ -32,11 +32,13 @@ $containerLarge: 1000 + ($containerPadding * 2);
     --black: #000;
 
     --gradient: linear-gradient(96.52deg, #1C4EFF 0%, #1C92FF 100%);
+    --gradient-v2: linear-gradient(349.85deg, #1C4EFF 14.74%, #1C92FF 85.09%);
     --dark-gradient: radial-gradient(100.56% 100.56% at 1.28% 1.22%, #0E2851 0%, #01132F 100%);
 
     --shadow: 8px 12px 36px rgba(0, 0, 0, 0.1);
 
     --br: 16px;
+    --br-2: 12px;
 
     --container-padding: 15px;
 

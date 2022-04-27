@@ -1,0 +1,44 @@
+
+.accent-section {
+	background: var(--gradient-v2);
+	position: relative;
+	// .accent-section__decor
+
+	&__decor {
+		position: absolute;
+		left: 0; top: 0;
+		width: 100%; height: 100%;
+		// .accent-section__decor--img
+
+		&--img {
+			position: absolute;
+			left: 50%; top: 0;
+			transform: translate(-50%,0);
+			width: 100%; height: 100%;
+			max-width: 1032px;
+			object-fit: cover;
+			text-align: center;
+		}
+	}
+
+	// .accent-section__container
+
+	&__container {
+	}
+
+	// .accent-section__section-title
+
+	&__section-title {
+	}
+
+	// .accent-section__btn
+
+	&__btn {
+		width: 100%; max-width: 358px;
+		margin-top: 30px;
+		@include _768 {
+			margin-top: 40px;
+		}
+	}
+}
+

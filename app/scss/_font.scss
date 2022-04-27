@@ -7,13 +7,23 @@
     margin: 0;
 
     font-size: 1.875rem;
+    &._min {
+        font-size: 1.5rem;
+        line-height: 150%;
+    }
 
     @include _768 {
         font-size: 2.5rem;
+        &._min {
+            font-size: 2rem;
+        }
     }
 
     @include _992 {
         font-size: 4.375rem;
+        &._min {
+            font-size: 3rem;
+        }
     }
 }
 

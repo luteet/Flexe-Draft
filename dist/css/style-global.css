@@ -1322,9 +1322,11 @@ button.swiper-pagination-bullet {
   --white: #FFF;
   --black: #000;
   --gradient: linear-gradient(96.52deg, #1C4EFF 0%, #1C92FF 100%);
+  --gradient-v2: linear-gradient(349.85deg, #1C4EFF 14.74%, #1C92FF 85.09%);
   --dark-gradient: radial-gradient(100.56% 100.56% at 1.28% 1.22%, #0E2851 0%, #01132F 100%);
   --shadow: 8px 12px 36px rgba(0, 0, 0, 0.1);
   --br: 16px;
+  --br-2: 12px;
   --container-padding: 15px;
   --hexagon: polygon(45% 1.33975%, 46.5798% 0.60307%, 48.26352% 0.15192%, 50% 0%, 51.73648% 0.15192%, 53.4202% 0.60307%, 55% 1.33975%, 89.64102% 21.33975%, 91.06889% 22.33956%, 92.30146% 23.57212%, 93.30127% 25%, 94.03794% 26.5798%, 94.48909% 28.26352%, 94.64102% 30%, 94.64102% 70%, 94.48909% 71.73648%, 94.03794% 73.4202%, 93.30127% 75%, 92.30146% 76.42788%, 91.06889% 77.66044%, 89.64102% 78.66025%, 55% 98.66025%, 53.4202% 99.39693%, 51.73648% 99.84808%, 50% 100%, 48.26352% 99.84808%, 46.5798% 99.39693%, 45% 98.66025%, 10.35898% 78.66025%, 8.93111% 77.66044%, 7.69854% 76.42788%, 6.69873% 75%, 5.96206% 73.4202%, 5.51091% 71.73648%, 5.35898% 70%, 5.35898% 30%, 5.51091% 28.26352%, 5.96206% 26.5798%, 6.69873% 25%, 7.69854% 23.57212%, 8.93111% 22.33956%, 10.35898% 21.33975%);
 }
@@ -1674,6 +1676,27 @@ body._popup-active {
   background: var(--accent);
 }
 
+._btn._light {
+  padding: 14px 63px;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 120%;
+  color: var(--accent);
+  background-clip: inherit;
+  background: var(--white);
+  -webkit-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
+}
+
+._btn._light::before,
+._btn._light::after {
+  display: none;
+}
+
+._btn._light:hover {
+  background: var(--accent-light);
+}
+
 ._btn-icon {
   display: inline-block;
   -webkit-transform: rotate(-90deg);
@@ -1802,12 +1825,57 @@ body._popup-active {
   -webkit-user-drag: none;
 }
 
+._ul-check li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px 0;
+}
+
+._ul-check li::before {
+  content: "\e903";
+  font-family: "flexe-draft" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 10px;
+  color: var(--white);
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 16px;
+          flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  padding-top: 1px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: var(--gradient);
+}
+
 ._main-title {
   font-family: var(--title-font);
   font-weight: 600;
   line-height: 130%;
   margin: 0;
   font-size: 1.875rem;
+}
+
+._main-title._min {
+  font-size: 1.5rem;
+  line-height: 150%;
 }
 
 ._title {
@@ -2020,6 +2088,39 @@ body._popup-active {
   margin-top: 20px;
 }
 
+.accent-section {
+  background: var(--gradient-v2);
+  position: relative;
+}
+
+.accent-section__decor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.accent-section__decor--img {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  width: 100%;
+  height: 100%;
+  max-width: 1032px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  text-align: center;
+}
+
+.accent-section__btn {
+  width: 100%;
+  max-width: 358px;
+  margin-top: 30px;
+}
+
 .header {
   position: absolute;
   left: 0;
@@ -2166,7 +2267,8 @@ body._popup-active {
   transition: color 0.2s ease-in-out;
 }
 
-.header__nav--link:hover {
+.header__nav--link:hover,
+.header__nav--link._active {
   color: var(--accent);
 }
 
@@ -2544,6 +2646,10 @@ body._popup-active {
     font-size: 2.5rem;
   }
 
+  ._main-title._min {
+    font-size: 2rem;
+  }
+
   ._section-subtitle {
     font-size: 2rem;
   }
@@ -2580,6 +2686,10 @@ body._popup-active {
     display: none;
   }
 
+  .accent-section__btn {
+    margin-top: 40px;
+  }
+
   .footer__nav--link {
     padding: 8px 0;
     font-size: 1rem;
@@ -2597,6 +2707,10 @@ body._popup-active {
 
   ._main-title {
     font-size: 4.375rem;
+  }
+
+  ._main-title._min {
+    font-size: 3rem;
   }
 
   ._title {
