@@ -33,10 +33,12 @@ if(document.querySelector('.grid')) {
     
   });
   
-  let activeFiltersElem = document.querySelector('._filter-btn._active');
-  if(activeFiltersElem) {
-    iso.arrange({ filter: activeFiltersElem.getAttribute('data-filter') });
-  }
+  document.addEventListener("DOMContentLoaded", function(event) {
+    let activeFiltersElem = document.querySelector('._filter-btn._active');
+    if(activeFiltersElem) {
+      iso.arrange({ filter: activeFiltersElem.getAttribute('data-filter') });
+    }  
+  });
   
   // change is-checked class on buttons
   var buttonGroups = document.querySelectorAll('.button-group');
