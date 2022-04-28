@@ -1,0 +1,51 @@
+@@include("html/_header.html", {
+    "services": '',
+    "clients": '',
+    "testimonials": '',
+    "case": '',
+    "team": '',
+})
+
+<main class="wrapper">
+    <section class="blog card-page _section-padding">
+        <div class="card-page__container _container">
+            <div class="blog__header card-page__header _txt-center _page-header-padding">
+                <h2 class="blog-page__section-title card-page__section-title _main-title _min">
+                    Blog
+                </h2>
+                <form action="#" class="blog__filter">
+                    @@loop("html/blog/_blog-filter-item.html", [
+                        {"name": 'all', "text": 'All', "checked": 'checked'},
+                        {"name": 'guides', "text": 'Guides', "checked": ''},
+                        {"name": 'nft', "text": 'NFT', "checked": ''},
+                        {"name": 'marketing-ideas', "text": 'Marketing Ideas', "checked": ''},
+                        {"name": 'gamefil', "text": 'Gamefi', "checked": ''},
+                        {"name": 'metaverse', "text": 'Metaverse', "checked": ''},
+                    ])
+                </form>
+            </div>
+            <ul class="blog__list card-page__list">
+                @@loop("html/blog/_blog-card.html", [
+                {},
+                {},
+                {},
+
+                {},
+                {},
+                {},
+
+                {},
+                {},
+                {},
+                ])
+            </ul>
+            <div class="blog__footer card-page__footer">
+                @@include("html/_card-page-pagination.html", {
+                    "class": 'blog__pagination',
+                })
+            </div>
+        </div>
+    </section>
+</main>
+
+@@include("html/_footer.html")

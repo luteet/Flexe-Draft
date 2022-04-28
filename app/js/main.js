@@ -108,31 +108,21 @@ body.addEventListener('click', function (event) {
 
   }
 
-})
 
-/* let thisTouchTarget;
-body.addEventListener('touchstart', function(event) {
-  event.preventDefault();
-  console.log(event);
-  thisTouchTarget = event.target;
 
-  let dropDownBtn = thisTouchTarget.closest('._drop-down-btn');
-  if(dropDownBtn) {
-    
-    
-    if(!dropDownBtn.classList.contains('_active')) {
-      
-    }
-
-    dropDownBtn.classList.add('_active');
-
-  } else if(!thisTarget.closest('._drop-down')) {
-    document.querySelectorAll('._drop-down-btn').forEach(thisDropDownBtn => {
-      thisDropDownBtn.classList.remove('_active');
-    })
+  let btnPopup = thisTarget.closest('._open-popup');
+  if(btnPopup) {
+    event.preventDefault();
+  
+    popup({
+      id: btnPopup.getAttribute('href'),
+      html: html,
+      body: body,
+    });
+  
   }
 
-}); */
+})
 
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <slider> -=-=-=-=-=-=-=-=-=-=-=-=

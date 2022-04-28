@@ -2,6 +2,7 @@ html, body {
     font-size: 16px;
     min-height: 100%;
 }
+
 body {
 
     font-family: var(--main-font);
@@ -12,7 +13,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    //padding-right: var(--popup-padding);
+    padding-right: var(--popup-padding);
 
     &._active {
         overflow: hidden;

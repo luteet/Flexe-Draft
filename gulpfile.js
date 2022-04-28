@@ -78,6 +78,7 @@ function scriptsLib() {
         'app/js/filter.js', // Фильтр div блоков
         'app/js/copyToClipboard.js', // Копирование данных из input в буфер обмена
         'app/js/slide.js', // аналог slideDown, slideUp и slideToggle в jQuery
+        'app/js/popup.js',
     ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())

@@ -9,6 +9,8 @@
 
     position: relative;
 
+    
+
     // .intro__container
 
     &__container {
@@ -131,6 +133,7 @@
         // .intro__info--social
 
         &--social {
+            padding-right: var(--popup-padding);
         }
     }
 

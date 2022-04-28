@@ -224,10 +224,7 @@
         line-height: 150%;
 
         & p {
-            padding-bottom: 14px; padding-bottom: 14px;
-            @include _768 {
-                padding-top: 16px; padding-bottom: 16px;
-            }
+            padding-top: 16px; padding-bottom: 16px;
         }
 
         &--item {
@@ -259,10 +256,7 @@
         }
 
         &--block {
-            padding-bottom: 14px; padding-bottom: 14px;
-            @include _768 {
-                padding-top: 16px; padding-bottom: 16px;
-            }
+            padding-top: 16px; padding-bottom: 16px;
         }
         // .case-intro__content--name
 

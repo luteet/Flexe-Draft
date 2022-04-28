@@ -1,0 +1,211 @@
+.blog {
+
+    // .blog__header
+
+    &__header {
+    }
+
+    // .blog__filter
+
+    &__filter {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+        padding-top: 30px;
+        @include _768 {
+            padding-top: 44px;
+            justify-content: center;
+        }
+
+        margin: -4px;
+        @include _768 {
+            margin: -8px;
+        }
+
+        &--item {
+            padding: 4px;
+            @include _768 {
+                padding: 8px;
+            }
+        }
+
+        &--input {
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%,-50%);
+            z-index: -1;
+            opacity: 0;
+        }
+
+        &--input:checked + &--label {
+            color: var(--accent);
+            border: 1px solid var(--white);
+            &::before {
+                opacity: 1;
+            }
+        }
+
+        &--label {
+            display: inline-block;
+            padding: 6px 16px;
+            @include _768 {
+                padding: 7px 24px;
+            }
+
+            cursor: pointer;
+
+            background: var(--white);
+            border-radius: 100px;
+
+            position: relative;
+            
+            font-weight: 500;
+            color: var(--dark);
+            border: 1px solid var(--light-gray);
+
+            transition: color .2s ease-in-out, border .2s ease-in-out;
+
+            &:hover {
+                color: var(--accent);
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0; top: 0;
+                width: 100%; height: 100%;
+                border: 1px solid transparent;
+                border-radius: 100px;
+                background: linear-gradient(45deg,#1C4EFF,#1C92FF) border-box;
+                -webkit-mask:
+                    linear-gradient(#fff 0 0) padding-box, 
+                    linear-gradient(#fff 0 0);
+                -webkit-mask-composite: destination-out;
+                mask-composite: exclude;
+
+                transition: opacity .2s ease-in-out;
+                opacity: 0;
+            }
+        }
+    }
+
+    // .blog__list
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+
+        margin: -10px;
+    }
+
+    // .blog__card
+
+    &__card {
+        flex: 1 1 100%;
+
+        @include _768 {
+            flex: 0 1 50%;
+        }
+
+        @include _992 {
+            flex: 0 1 33.333%;
+        }
+        
+        padding: 10px;
+        // .blog__card--body
+
+        &--body {
+            display: inline-flex;
+            flex-direction: column;
+
+            min-height: 100%;
+
+            padding: 16px 16px 24px 16px;
+
+            color: var(--dark);
+
+            border: 1px solid var(--light-gray);
+            border-radius: var(--br);
+
+            transition: border .2s ease-in-out;
+            &:hover {
+                border-color: var(--accent);
+            }
+        }
+
+        // .blog__card--image
+
+        &--image {
+        }
+
+        // .blog__card--img
+
+        &--img {
+            width: 100%; height: 187px;
+            @media(min-width: 400px) {
+                height: 220px;
+            }
+            object-fit: cover;
+            border-radius: var(--br);
+        }
+
+        // .blog__card--title
+
+        &--title {
+            padding-top: 32px;
+
+            font-weight: 600;
+            font-size: 1.125rem;
+            line-height: 150%;
+
+            flex: 1 1 auto;
+        }
+
+        &--footer {
+            padding-top: 35px;
+        }
+
+        // .blog__card--time
+
+        &--time {
+            font-weight: 500;
+            font-size: 0.875rem;
+            line-height: 150%;
+            color: var(--gray);
+        }
+    }
+
+    // .blog__footer
+
+    &__footer {
+    }
+}
+/* .card-page {
+
+    // .card-page__container
+
+    &__container {
+    }
+
+    // .card-page__header
+
+    &__header {
+    }
+
+    // .card-page__section-title
+
+    &__section-title {
+    }
+
+    // .card-page__list
+
+    &__list {
+    }
+
+    // .card-page__footer
+
+    &__footer {
+    }
+} */
+

@@ -1411,6 +1411,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-right: var(--popup-padding);
 }
 
 body._active {
@@ -1940,6 +1941,224 @@ body._popup-active {
   text-align: center;
 }
 
+._popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  z-index: 99999;
+  will-change: opacity;
+}
+
+._popup-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100%;
+  z-index: 2;
+}
+
+._popup-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.3;
+}
+
+._popup-body {
+  margin: auto;
+  position: relative;
+  background-color: white;
+  overflow-y: auto;
+  max-height: calc(100vh - 30px);
+  max-width: 504px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 14px;
+  z-index: 2;
+}
+
+._popup-close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  line-height: 100%;
+  width: 40px;
+  height: 47px;
+  font-size: 32px;
+  background-color: transparent;
+  fill: var(--white);
+}
+
+._popup-close-btn svg {
+  -webkit-transition: fill 0.2s ease-in-out;
+  transition: fill 0.2s ease-in-out;
+}
+
+._popup-close-btn:hover {
+  fill: var(--accent);
+}
+
+.contact-popup__content-block {
+  margin: 14px 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contact-popup__content-block > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  margin: 10px 0;
+}
+
+.contact-popup__content-block > *._full {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+}
+
+.contact-popup__legend {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  font-size: 0.875rem;
+  color: var(--gray);
+  display: block;
+}
+
+.contact-popup__link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  padding: 14px;
+  width: 100%;
+  border-radius: 100px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--accent);
+  -webkit-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
+  background: var(--white);
+}
+
+.contact-popup__link svg {
+  margin-right: 5px;
+}
+
+.contact-popup__link:hover {
+  background: var(--accent-light);
+}
+
+.contact-popup__link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-radius: 50px;
+  background: linear-gradient(45deg, #1C4EFF, #1C92FF) border-box;
+  -webkit-mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff)) padding-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff));
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.contact-popup__copy {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+  grid-template-columns: 100%;
+}
+
+.contact-popup__copy--label {
+  width: 100%;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: 1/1;
+}
+
+.contact-popup__copy--input {
+  width: 100%;
+  padding: 16px 120px 16px 20px;
+  border-radius: 100px;
+  border: 1px solid var(--light-gray);
+}
+
+.contact-popup__copy--btn {
+  -ms-grid-column-align: end;
+      justify-self: end;
+  border-radius: 100px;
+  width: 90px;
+  height: 100%;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: 1/1;
+  position: relative;
+  background: var(--white);
+  -webkit-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
+}
+
+.contact-popup__copy--btn:hover {
+  background: var(--accent-light);
+}
+
+.contact-popup__copy--btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-radius: 50px;
+  background: linear-gradient(45deg, #1C4EFF, #1C92FF) border-box;
+  -webkit-mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff)) padding-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff));
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+
 .slider-arrow {
   position: relative;
   left: 0;
@@ -2282,6 +2501,7 @@ body._popup-active {
   left: 0;
   top: 0;
   width: 100%;
+  padding-right: var(--popup-padding);
   -webkit-transition: -webkit-transform 0.2s ease-in-out;
   transition: -webkit-transform 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out;
@@ -2750,6 +2970,33 @@ body._popup-active {
 
   .footer__social--item {
     padding: 12px;
+  }
+}
+
+@media (min-width: 390px) {
+  .contact-popup__content-block > * {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 calc(50% - 10px);
+            flex: 0 1 calc(50% - 10px);
+  }
+}
+
+@media (min-width: 426px) {
+  ._popup-body {
+    padding: 30px;
+  }
+
+  ._popup-close-btn {
+    right: 15px;
+    top: 20px;
+  }
+
+  .contact-popup__link {
+    font-size: 1rem;
+  }
+
+  .contact-popup__link svg {
+    margin-right: 10px;
   }
 }
 
