@@ -596,6 +596,8 @@
   position: absolute;
   left: -2px;
   top: -2px;
+  -webkit-filter: url(#round-min);
+          filter: url(#round-min);
   width: calc(100% + 4px);
   height: calc(100% + 4px);
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
@@ -2077,6 +2079,11 @@
   .team-card__avatar--border {
     width: 237px;
     height: 264px;
+  }
+
+  .team-card__avatar--border::before {
+    -webkit-filter: url(#round);
+            filter: url(#round);
   }
 
   .team-card__avatar--img {

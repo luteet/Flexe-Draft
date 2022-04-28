@@ -96,6 +96,10 @@
                 content: '';
                 position: absolute;
                 left: -2px; top: -2px;
+                filter: url(#round-min);
+                @include _768 {
+                    filter: url(#round);
+                }
                 width: calc(100% + 4px); height: calc(100% + 4px);
                 clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
                 background: var(--gradient);

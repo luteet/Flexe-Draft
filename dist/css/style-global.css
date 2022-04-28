@@ -2291,6 +2291,8 @@ body._popup-active {
           transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
+  -webkit-filter: url(#round-min);
+          filter: url(#round-min);
   -webkit-clip-path: var(--hexagon);
           clip-path: var(--hexagon);
   transition: opacity 0.2s ease-in-out;
