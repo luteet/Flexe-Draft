@@ -206,9 +206,22 @@
 
             border-radius: 50%;
             border: 1px solid var(--gray);
-            & svg {
-                
+
+            transition: background .2s ease-in-out, border .2s ease-in-out;
+
+            & svg, svg path {
+                fill: var(--white);
                 width: 50%; height: 50%;
+
+                transition: fill .2s ease-in-out;
+            }
+
+            &:hover {
+                background: var(--white);
+                border-color: var(--white);
+                & svg path {
+                    fill: var(--accent);
+                }
             }
         }
     }

@@ -7,9 +7,7 @@
 
     min-height: 100vh;
 
-    position: relative;
-
-    
+    position: relative;    
 
     // .intro__container
 
@@ -173,10 +171,18 @@
             border-radius: 50%;
             background: var(--white);
 
+            transition: background .2s ease-in-out;
+
             box-shadow: 0 10px 20px 0px rgba(#01132F, 0.15);
 
-            & svg {
+            & svg, svg path {
                 width: 50%; height: 50%;
+                
+            }
+
+            &:hover {
+                background: var(--accent-gray);
+                
             }
         }
     }

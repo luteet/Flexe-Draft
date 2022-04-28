@@ -131,7 +131,7 @@ function styles() {
         .pipe(scss({outputStyle: 'compressed'}))
         .pipe(mediaGroup())
         .pipe(autoprefixer({
-            overrideBrowserslist: ['last 2 version'],
+            overrideBrowserslist: ['last 1 version'],
             grid: true
         }))
         .pipe(minCSS())
@@ -145,7 +145,7 @@ function stylesGlobal() {
         .pipe(scss({outputStyle: 'compressed'}))
         .pipe(mediaGroup())
         .pipe(autoprefixer({
-            overrideBrowserslist: ['last 2 version'],
+            overrideBrowserslist: ['last 1 version'],
             grid: true
         }))
         .pipe(minCSS())
@@ -160,7 +160,7 @@ function stylesOriginal() {
         .pipe(mediaGroup())
         .pipe(concat('style.css'))
         .pipe(autoprefixer({
-            overrideBrowserslist: ['last 2 version'],
+            overrideBrowserslist: ['last 1 version'],
             grid: true
         }))
         .pipe(dest('dist/css'))
@@ -172,7 +172,7 @@ function stylesGlobalOriginal() {
         .pipe(mediaGroup())
         .pipe(concat('style-global.css'))
         .pipe(autoprefixer({
-            overrideBrowserslist: ['last 2 version'],
+            overrideBrowserslist: ['last 1 version'],
             grid: true
         }))
         .pipe(dest('dist/css'))

@@ -3,7 +3,7 @@
     left: 0; top: 0;
     width: 100%;
 
-    padding-right: var(--popup-padding);
+    //padding-right: var(--popup-padding) !important;
 
     //transform: translate(0, var(--pos));
 
@@ -217,7 +217,7 @@
                 -webkit-mask:
                     linear-gradient(#fff 0 0) padding-box, 
                     linear-gradient(#fff 0 0);
-                -webkit-mask-composite: destination-out;
+                -webkit-mask-composite: xor;
                 mask-composite: exclude;
             }
             &::after {
@@ -375,4 +375,5 @@
         }
     }
 
+    
 }
