@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function(event) {
 
 const body = document.querySelector('body'),
     html = document.querySelector('html'),
@@ -126,8 +127,6 @@ body.addEventListener('click', function (event) {
 
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <slider> -=-=-=-=-=-=-=-=-=-=-=-=
-
-document.addEventListener("DOMContentLoaded", function(event) {
     
   let doneProjectsSlider = new Swiper('.done-projects__slider', {
     
@@ -214,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
   });
   
-});
+
 
 let mobSlider;
 
@@ -311,3 +310,4 @@ wow.init();
 // =-=-=-=-=-=-=-=-=-=-=-=- </Анимации> -=-=-=-=-=-=-=-=-=-=-=-=
 
 */
+});
