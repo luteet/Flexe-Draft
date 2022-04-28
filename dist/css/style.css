@@ -1004,7 +1004,6 @@
 }
 
 .case-intro__header {
-  padding: 96px 0 20px 0;
   background: var(--light-gray-2);
 }
 
@@ -1021,7 +1020,7 @@
 }
 
 .case-intro__info {
-  padding-top: 0px;
+  padding-top: 20px;
   padding-bottom: 30px;
   flex: 0 1 40%;
   display: flex;
@@ -2454,10 +2453,6 @@
   .contact-us__section-subtitle {
     padding-top: 5px;
     text-align: left;
-  }
-
-  .case-intro__header {
-    padding: 173px 0 76px 0;
   }
 
   .case-intro__container {
