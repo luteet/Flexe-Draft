@@ -1571,8 +1571,6 @@ body._popup-active {
   border: 3px solid transparent;
   border-radius: 50px;
   background: linear-gradient(45deg, #1C4EFF, #1C92FF) border-box;
-  -webkit-mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff)) padding-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff));
-  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
   -webkit-transition: opacity 0.2s ease-in-out;
@@ -2093,8 +2091,6 @@ body._popup-active {
   border: 3px solid transparent;
   border-radius: 50px;
   background: linear-gradient(45deg, #1C4EFF, #1C92FF) border-box;
-  -webkit-mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff)) padding-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff));
-  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
   -webkit-transition: opacity 0.2s ease-in-out;
@@ -2151,8 +2147,6 @@ body._popup-active {
   border: 3px solid transparent;
   border-radius: 50px;
   background: linear-gradient(45deg, #1C4EFF, #1C92FF) border-box;
-  -webkit-mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff)) padding-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff));
-  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
   -webkit-transition: opacity 0.2s ease-in-out;

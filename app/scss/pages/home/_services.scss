@@ -93,9 +93,7 @@
                 border: 2px solid transparent;
                 border-radius: 100px;
                 background: linear-gradient(45deg,#1C4EFF,#1C92FF) border-box;
-                -webkit-mask:
-                    linear-gradient(#fff 0 0) padding-box, 
-                    linear-gradient(#fff 0 0);
+                
                 -webkit-mask-composite: destination-out;
                 mask-composite: exclude;
 
