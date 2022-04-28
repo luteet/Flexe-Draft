@@ -68,11 +68,17 @@
 ._section-subtitle {
     line-height: 150%;
     font-weight: 600;
+
     font-size: 1.5rem;
+    &._super-min {
+        font-size: 1.5rem;
+    }
+
     &._large {
         font-weight: 500;
         font-size: 1.5625rem;
     }
+
     color: var(--dark);
 
     &._light {
@@ -85,17 +91,29 @@
 
     @include _768 {
         font-size: 2rem;
+
         &._large {
             font-weight: 600;
             font-size: 2.5rem;
         }
+
+        &._super-min {
+            font-size: 1.5rem;
+        }
+
     }
 
     @include _992 {
         font-size: 2.5rem;
+
         &._large {
             font-size: 3rem;
         }
+
+        &._super-min {
+            font-size: 2rem;
+        }
+
     }
 
 }

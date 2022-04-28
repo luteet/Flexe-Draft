@@ -160,3 +160,13 @@
         }
     }
 }
+
+.slider-min-pagination {
+    @include _768 {
+        display: none;
+    }
+    & .swiper-pagination {
+        position: static;
+        margin-top: 20px;
+    }
+}

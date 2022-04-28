@@ -72,12 +72,18 @@
 
         &--body {
             position: relative;
-            filter: url(#round);
+            filter: url(#round-min);
+            @include _768 {
+                filter: url(#round);
+            }
             
         }
 
         &--border {
-            filter: url(#round);
+            filter: url(#round-min);
+            @include _768 {
+                filter: url(#round);
+            }
             position: absolute;
             left: 50%; top: 0;
             transform: translate(-50%,0);

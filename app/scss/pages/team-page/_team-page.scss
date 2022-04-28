@@ -1,0 +1,142 @@
+.team-page {
+
+    // .team-page__container
+
+    &__container {
+    }
+
+    // .team-page__header
+
+    &__header {
+        /* padding: 75px 0 64px 0;
+        @include _768 {
+            padding: 150px 0 112px 0;
+        } */
+    }
+
+    // .team-page__section-title
+
+    &__section-title {
+    }
+
+    // .team-page__section-subtitle
+
+    &__section-subtitle {
+    }
+
+    // .team-page__text
+
+    &__text {
+        padding-top: 3px;
+
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 160%;
+        color: var(--dark);
+
+        & br {
+            display: none;
+        }
+
+        @include _768 {
+            font-size: 1.125rem;
+
+            & br {
+                display: inherit;
+            }
+        }
+
+        & p {
+            padding: 7px 0;
+        }
+    }
+
+    // .team-page__btn
+
+    &__btn {
+        margin-top: 15px;
+        @include _768 {
+            margin-top: 25px;
+        }
+        
+    }
+
+    // .team-page__list
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        margin: -20px -13.5px;
+        @include _768 {
+            margin: -32px -13.5px;
+        }
+    }
+}
+
+.bases {
+
+    // .bases__container
+
+    &__container {
+    }
+
+    // .bases__section-title
+
+    &__section-title {
+    }
+
+    // .bases__slider
+
+    &__slider {
+        
+        @include _768 {
+            margin: -10px;
+        }
+    }
+
+    // .bases__list
+
+    &__list {
+        padding-top: 40px;
+        @include _768 {
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 56px;
+        }
+    }
+
+    // .bases__card
+
+    &__card {
+        @include _768 {
+            flex: 0 1 50%;
+
+            padding: 10px;
+        }
+
+        @include _992 {
+            flex: 0 1 33.333%;
+        }
+        // .bases__card--body
+
+        &--body {
+            text-align: center;
+        }
+
+        // .bases__card--img
+
+        &--img {
+            width: 100%; max-width: 400px;
+            height: 241px;
+            @include _768 {
+                max-width: 500px;
+                height: 285px;
+            }
+            border-radius: var(--br);
+            object-fit: cover;
+        }
+    }
+}
+

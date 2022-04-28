@@ -206,6 +206,11 @@ body {
         padding: 10px 20px;
         font-size: 0.875rem;
     }
+
+    &._alt-min {
+        font-size: 1.125rem;
+        padding: 13px 50px;
+    }
     
     &._transparent {
         color: transparent;
@@ -430,5 +435,12 @@ body {
 
         border-radius: 50%;
         background: var(--gradient);
+    }
+}
+
+._page-header-padding {
+    padding: 52px 0 50px 0;
+    @include _768 {
+        padding: 62px 0 50px 0;
     }
 }

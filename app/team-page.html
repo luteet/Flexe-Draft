@@ -1,0 +1,113 @@
+@@include("html/_header.html", {
+    "services": '',
+    "clients": '',
+    "testimonials": '',
+    "case": '',
+    "team": '_page-active',
+})
+
+<main class="wrapper">
+    <section class="team-page _section-padding">
+        <div class="team-page__container _container">
+            <div class="team-page__header _txt-center _page-header-padding">
+                <h2 class="team-page__section-title _section-title">
+                    Team
+                </h2>
+                <h3 class="team-page__section-subtitle _section-subtitle">
+                    Our Mission
+                </h3>
+                <div class="team-page__text">
+                    <p>
+                        Make awareness of fintech startups & spread their<br> products to the world via marketing & PR
+                    </p>
+                </div>
+                <a href="#" class="team-page__btn _btn">
+                    Let's Talk
+                </a>
+            </div>
+            <ul class="team-page__list">
+                @@loop("html/home/team/_team-card.html", [
+                    {"avatar": '1', "name": 'Alexander', "post": 'Founder'},
+                    {"avatar": '2', "name": 'Ekaterina', "post": 'Head of Sales'},
+                    {"avatar": '3', "name": 'Xeniya', "post": 'Head of PM'},
+                    {"avatar": '4', "name": 'Aleksandr', "post": 'Head of HR'},
+                    {"avatar": '5', "name": 'Aleksandr', "post": 'Marketing Manager'},
+                    
+                    {"avatar": '1', "name": 'Alexander', "post": 'Founder'},
+                    {"avatar": '2', "name": 'Ekaterina', "post": 'Head of Sales'},
+                    {"avatar": '3', "name": 'Xeniya', "post": 'Head of PM'},
+                    {"avatar": '4', "name": 'Aleksandr', "post": 'Head of HR'},
+                    {"avatar": '5', "name": 'Aleksandr', "post": 'Marketing Manager'},
+
+                    {"avatar": '1', "name": 'Alexander', "post": 'Founder'},
+                    {"avatar": '2', "name": 'Ekaterina', "post": 'Head of Sales'},
+                    {"avatar": '3', "name": 'Xeniya', "post": 'Head of PM'},
+                    {"avatar": '4', "name": 'Aleksandr', "post": 'Head of HR'},
+                    {"avatar": '5', "name": 'Aleksandr', "post": 'Marketing Manager'},
+
+                    {"avatar": '1', "name": 'Alexander', "post": 'Founder'},
+                    {"avatar": '2', "name": 'Ekaterina', "post": 'Head of Sales'},
+                    {"avatar": '3', "name": 'Xeniya', "post": 'Head of PM'},
+                    {"avatar": '4', "name": 'Aleksandr', "post": 'Head of HR'},
+                    {"avatar": '5', "name": 'Aleksandr', "post": 'Marketing Manager'},
+                ])
+            </ul>
+        </div>
+    </section>
+    <section class="bases _section-min-padding">
+        <div class="bases__container _container">
+            <h2 class="bases__section-title _section-subtitle _super-min _txt-center">
+                We are based in <strong>Silicon Oasis,</strong> Dubai,<br> United Arab Emirates
+            </h2>
+            <div class="bases__slider swiper mob-slider">
+                <ul class="bases__list swiper-wrapper">
+                    <li class="bases__card swiper-slide">
+                        <div class="bases__card--body">
+                            <picture>
+                                <source srcset="img/team/image-1.webp" type="image/webp">
+                                <img src="img/team/image-1.jpg" loading="lazy" alt="" width="424" height="285" class="bases__card--img">
+                            </picture>
+                        </div>
+                    </li>
+                    <li class="bases__card swiper-slide">
+                        <div class="bases__card--body">
+                            <picture>
+                                <source srcset="img/team/image-2.webp" type="image/webp">
+                                <img src="img/team/image-2.jpg" loading="lazy" alt="" width="424" height="285" class="bases__card--img">
+                            </picture>
+                        </div>
+                    </li>
+                    <li class="bases__card swiper-slide">
+                        <div class="bases__card--body">
+                            <picture>
+                                <source srcset="img/team/image-3.webp" type="image/webp">
+                                <img src="img/team/image-3.jpg" loading="lazy" alt="" width="424" height="285" class="bases__card--img">
+                            </picture>
+                        </div>
+                    </li>
+                </ul>
+                <div class="bases__pagination slider-min-pagination">
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="faq _section-min-padding">
+        <div class="faq__container _container">
+            <h2 class="faq__section-title _section-subtitle _txt-center">
+                FAQ
+            </h2>
+            <ul class="faq__list">
+                @@loop("html/team-page/_faq-item.html", [
+                    {"title": 'Whats methods of payment do you accept?', "text": 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam iure est ipsa. Pariatur velit ut eum sapiente cupiditate molestiae itaque vel iusto laborum perspiciatis earum eaque, nemo libero? Sunt, corporis?'},
+                    {"title": 'Do you accept native tokens?', "text": 'If it was 2017, we would accept them, but we no longer do it and payment in tokens is not possible.'},
+                    {"title": 'Is revenue share model possible?', "text": 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam iure est ipsa. Pariatur velit ut eum sapiente cupiditate molestiae itaque vel iusto laborum perspiciatis earum eaque, nemo libero? Sunt, corporis?'},
+                    {"title": 'Can you provide services for our clients via WhiteLabel?', "text": 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam iure est ipsa. Pariatur velit ut eum sapiente cupiditate molestiae itaque vel iusto laborum perspiciatis earum eaque, nemo libero? Sunt, corporis?'},
+                    {"title": 'Can we resell your services?', "text": 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam iure est ipsa. Pariatur velit ut eum sapiente cupiditate molestiae itaque vel iusto laborum perspiciatis earum eaque, nemo libero? Sunt, corporis?'},
+                ])
+            </ul>
+        </div>
+    </section>
+</main>
+
+@@include("html/_footer.html")

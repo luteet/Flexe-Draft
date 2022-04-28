@@ -6,133 +6,133 @@ const body = document.querySelector('body'),
     header = document.querySelector('.header');
 
 
-let thisTarget;
+let thisTarget, faqCheck = true;
 body.addEventListener('click', function (event) {
 
-    thisTarget = event.target;
+  thisTarget = event.target;
 
-    // Меню в шапке
-    if (thisTarget.closest('._burger')) {
-        menu.forEach(elem => {
-            elem.classList.toggle('_active')
-        })
-    }
-
-
-
-    let dropDownBtn = thisTarget.closest('._drop-down-btn');
-    if(dropDownBtn) {
-
-      dropDownBtn.classList.add('_active');
-
-    } else if(!thisTarget.closest('._drop-down')) {
-      document.querySelectorAll('._drop-down-btn').forEach(thisDropDownBtn => {
-        thisDropDownBtn.classList.remove('_active');
-      })
-    }
-
-
-
-    let scrollBtn = thisTarget.closest('._scroll-btn');
-    if(scrollBtn) {
-      event.preventDefault();
-      let section;
-    
-      try {
-        section = document.querySelector(scrollBtn.getAttribute('href'));
-      } catch {
-        section = false;
-      }
-      
-    
+  if (thisTarget.closest('._burger')) {
       menu.forEach(elem => {
-        elem.classList.remove('_active')
+          elem.classList.toggle('_active')
       })
+  }
+
+
+
+  let dropDownBtn = thisTarget.closest('._drop-down-btn');
+  if(dropDownBtn && event.pointerType == 'touch') {
     
-      window.scroll({
-        left: 0,
-        top: (section) ? section.offsetTop : 0,
-        behavior: 'smooth'
-      })
-    
-    }
-
-
-    let filterBtn = thisTarget.closest('._filter-btn');
-    if(filterBtn) {
-
-      document.querySelectorAll('._filter-btn').forEach(thisFilterBtn => {
-        thisFilterBtn.classList.remove('_active')
-      })
-
-      filterBtn.classList.add('_active');
-
-    }
-
-
-
-    let copyBtn = thisTarget.closest('._copy-btn');
-    if (copyBtn) {
+    if(!dropDownBtn.classList.contains('_active')) {
       event.preventDefault();
+    }
 
-      let input = copyBtn.parentNode.querySelector('._copy-input');
+    dropDownBtn.classList.add('_active');
 
-      if (input) {
+  } else if(!thisTarget.closest('._drop-down')) {
+    document.querySelectorAll('._drop-down-btn').forEach(thisDropDownBtn => {
+      thisDropDownBtn.classList.remove('_active');
+    })
+  }
 
-        copyToClipboard(input)
 
-      }
+
+  let scrollBtn = thisTarget.closest('._scroll-btn');
+  if(scrollBtn) {
+    event.preventDefault();
+    let section;
+  
+    try {
+      section = document.querySelector(scrollBtn.getAttribute('href'));
+    } catch {
+      section = false;
+    }
+    
+  
+    menu.forEach(elem => {
+      elem.classList.remove('_active')
+    })
+  
+    window.scroll({
+      left: 0,
+      top: (section) ? section.offsetTop : 0,
+      behavior: 'smooth'
+    })
+  
+  }
+
+
+  let filterBtn = thisTarget.closest('._filter-btn');
+  if(filterBtn) {
+
+    document.querySelectorAll('._filter-btn').forEach(thisFilterBtn => {
+      thisFilterBtn.classList.remove('_active')
+    })
+
+    filterBtn.classList.add('_active');
+
+  }
+
+
+
+  let copyBtn = thisTarget.closest('._copy-btn');
+  if (copyBtn) {
+    event.preventDefault();
+
+    let input = copyBtn.parentNode.querySelector('._copy-input');
+
+    if (input) {
+
+      copyToClipboard(input)
 
     }
+
+  }
+
+
+
+  let faqHeader = thisTarget.closest('._faq-header');
+  if(faqHeader && faqCheck) {
+    faqCheck = false;
+    let parent = faqHeader.closest('._faq'),
+        content = (parent) ? parent.querySelector('._faq-content') : false;
+
+    if(parent && content) {
+      parent.classList.toggle('_active');
+      slideToggle(content);
+    }
+
+    setTimeout(() => {
+      faqCheck = true;
+    },500)
+
+
+  }
 
 })
 
+/* let thisTouchTarget;
+body.addEventListener('touchstart', function(event) {
+  event.preventDefault();
+  console.log(event);
+  thisTouchTarget = event.target;
 
-// =-=-=-=-=-=-=-=-=-=-=-=- <media events> -=-=-=-=-=-=-=-=-=-=-=-=
+  let dropDownBtn = thisTouchTarget.closest('._drop-down-btn');
+  if(dropDownBtn) {
+    
+    
+    if(!dropDownBtn.classList.contains('_active')) {
+      
+    }
 
-let resizeCheck = {}, windowSize;
+    dropDownBtn.classList.add('_active');
 
-function resizeCheckFunc(size, minWidth, maxWidth) {
-  if (windowSize <= size && (resizeCheck[String(size)] == true || resizeCheck[String(size)] == undefined) && resizeCheck[String(size)] != false) {
-    resizeCheck[String(size)] = false;
-    maxWidth(); // < size
-  }
-
-  if (windowSize >= size && (resizeCheck[String(size)] == false || resizeCheck[String(size)] == undefined) && resizeCheck[String(size)] != true) {
-    resizeCheck[String(size)] = true;
-    minWidth(); // > size
-  }
-}
-
-function resize() {
-
-  windowSize = window.innerWidth
-
-  resizeCheckFunc(992,
-    function () {  // screen > 992px
-
-      menu.forEach(elem => {
-        elem.classList.remove('_active')
+  } else if(!thisTarget.closest('._drop-down')) {
+    document.querySelectorAll('._drop-down-btn').forEach(thisDropDownBtn => {
+      thisDropDownBtn.classList.remove('_active');
     })
+  }
 
-  },
-  function () {  // screen < 992px
-
-    iso = new Isotope( '.grid', {
-      itemSelector: '._filter-item',
-      layoutMode: 'fitRows'
-    });
-
-  });
-
-}
-
-resize();
-
-window.onresize = resize;
-
-// =-=-=-=-=-=-=-=-=-=-=-=- </media events> -=-=-=-=-=-=-=-=-=-=-=-=
-
+}); */
 
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <slider> -=-=-=-=-=-=-=-=-=-=-=-=
@@ -226,7 +226,88 @@ document.addEventListener("DOMContentLoaded", function(event) {
   
 });
 
+let mobSlider;
+
 // =-=-=-=-=-=-=-=-=-=-=-=- </slider> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+// =-=-=-=-=-=-=-=-=-=-=-=- <media events> -=-=-=-=-=-=-=-=-=-=-=-=
+
+let resizeCheck = {}, windowSize;
+
+function resizeCheckFunc(size, minWidth, maxWidth) {
+  if (windowSize <= size && (resizeCheck[String(size)] == true || resizeCheck[String(size)] == undefined) && resizeCheck[String(size)] != false) {
+    resizeCheck[String(size)] = false;
+    maxWidth(); // < size
+  }
+
+  if (windowSize >= size && (resizeCheck[String(size)] == false || resizeCheck[String(size)] == undefined) && resizeCheck[String(size)] != true) {
+    resizeCheck[String(size)] = true;
+    minWidth(); // > size
+  }
+}
+
+let mobSliderCheck = (document.querySelector('.mob-slider')) ? true : false;
+
+function resize() {
+
+  windowSize = window.innerWidth
+
+  resizeCheckFunc(768,
+    function () {  // screen > 768px
+
+      if(mobSlider) {
+        mobSlider.destroy(true, true);
+      }
+
+  },
+  function () {  // screen < 768px
+
+    if(mobSliderCheck) {
+      mobSlider = new Swiper('.mob-slider', {
+    
+        spaceBetween: 20,
+        slidesPerView: 1,
+        
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        
+      });
+    }
+    
+
+  });
+
+  resizeCheckFunc(992,
+    function () {  // screen > 992px
+
+      menu.forEach(elem => {
+        elem.classList.remove('_active')
+    })
+
+  },
+  function () {  // screen < 992px
+
+    iso = new Isotope( '.grid', {
+      itemSelector: '._filter-item',
+      layoutMode: 'fitRows'
+    });
+
+  });
+
+}
+
+resize();
+
+window.onresize = resize;
+
+// =-=-=-=-=-=-=-=-=-=-=-=- </media events> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+
 
 
 /* 

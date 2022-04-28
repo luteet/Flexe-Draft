@@ -1,0 +1,106 @@
+.faq {
+
+    // .faq__container
+
+    &__container {
+    }
+
+    // .faq__section-title
+
+    &__section-title {
+    }
+
+    // .faq__list
+
+    &__list {
+        padding: 25px 0 70px 0;
+        @include _768 {
+            padding: 40px 0 70px 0;
+        }
+        margin-top: -16px;
+
+        max-width: 1096px;
+        margin: -16px auto 0 auto;
+    }
+
+    // .faq__item
+
+    &__item {
+        margin-top: 16px;
+
+        background: var(--accent-gray);
+        border-radius: var(--br);
+
+        &._active &--header {
+            color: var(--accent);
+            
+            &::after {
+                transform: scaleY(-1) translate(0,50%);
+            }
+        }
+        // .faq__item--header
+
+        &--header {
+            padding: 16px 70px 16px 16px;
+            @include _768 {
+                padding: 24px 70px 24px 32px;
+            }
+
+            cursor: pointer;
+
+            position: relative;
+
+            &::after {
+                content: '\e901';
+                font-family: 'flexe-draft' !important;
+                speak: never;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+            
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+
+                position: absolute;
+                right: 24px; top: 50%;
+                transform: translate(0,-50%);
+                width: 32px; height: 32px;
+
+                transition: transform .2s ease-in-out;
+                
+            }
+        }
+
+        // .faq__item--title
+
+        &--title {
+            line-height: 125%;
+            font-weight: 600;
+            font-size: 1rem;
+            @include _768 {
+                font-size: 1.25rem;
+            }
+        }
+
+        // .faq__item--content
+
+        &--content {
+            display: none;
+            padding: 0 16px 16px 16px;
+
+            font-size: 0.875rem;
+            line-height: 150%;
+            @include _768 {
+                padding: 0 32px 24px 32px;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
