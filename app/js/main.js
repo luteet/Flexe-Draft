@@ -286,7 +286,6 @@ body.addEventListener('click', function (event) {
     }
   });
 
-
   let testimonialsSlider = new Swiper('.testimonials__slider', {
     
     spaceBetween: 30,
@@ -310,8 +309,6 @@ body.addEventListener('click', function (event) {
       },
     }
   });
-  
-
 
 let mobSlider;
 
@@ -394,7 +391,39 @@ window.onresize = resize;
 
 
 
+// =-=-=-=-=-=-=-=-=-=-=-=- <window scroll> -=-=-=-=-=-=-=-=-=-=-=-=
 
+function getCoords(elem) {
+  var box = elem.getBoundingClientRect();
+
+  return {
+  top: box.top + pageYOffset,
+  left: box.left + pageXOffset
+  };
+
+}
+
+let offsetCheck = document.querySelector('.offset-check-js');
+
+function scroll() {
+  let top = getCoords(offsetCheck).top,
+      videoItems = document.querySelectorAll('._video-anim-play');
+
+  videoItems.forEach(thisVideo => {
+    let videoOffsetTop = thisVideo.offsetTop;
+
+    if(top >= videoOffsetTop - window.innerHeight && !thisVideo.classList.contains('_played')) {
+      thisVideo.play();
+      thisVideo.classList.add('_played');
+    }
+  })
+}
+
+window.onscroll = scroll;
+
+scroll();
+
+// =-=-=-=-=-=-=-=-=-=-=-=- </window scroll> -=-=-=-=-=-=-=-=-=-=-=-=
 
 
 /* 

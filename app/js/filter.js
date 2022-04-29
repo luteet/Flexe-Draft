@@ -1,61 +1,31 @@
-if(document.querySelector('.grid')) {
+window.onload = function() {
+  if(document.querySelector('.grid')) {
 
-  var iso = new Isotope( '.grid', {
-    itemSelector: '._filter-item',
-    layoutMode: 'fitRows'
-});
-  
-  // filter functions
-  var filterFns = {
-    // show if number is greater than 50
-    numberGreaterThan50: function( itemElem ) {
-      var number = itemElem.querySelector('.number').textContent;
-      return parseInt( number, 10 ) > 50;
-    },
-    // show if name ends with -ium
-    ium: function( itemElem ) {
-      var name = itemElem.querySelector('.name').textContent;
-      return name.match( /ium$/ );
-    }
-  };
-  
-  // bind filter button click
-  var filtersElem = document.querySelector('.filters-button-group');
-  filtersElem.addEventListener( 'click', function( event ) {
-    // only work with buttons
-    if ( !matchesSelector( event.target, 'button' ) ) {
-      return;
-    }
-    var filterValue = event.target.getAttribute('data-filter');
-    // use matching filter function
-    /* filterValue = filterValue; */
-    iso.arrange({ filter: filterValue });
+    var iso = new Isotope( '.grid', {
+      itemSelector: '._filter-item',
+      layoutMode: 'fitRows'
+  });
     
-  });
-  
-  document.addEventListener("DOMContentLoaded", function(event) {
-    let activeFiltersElem = document.querySelector('._filter-btn._active');
-    if(activeFiltersElem) {
-      iso.arrange({ filter: activeFiltersElem.getAttribute('data-filter') });
-    }  
-  });
-  
-  // change is-checked class on buttons
-  var buttonGroups = document.querySelectorAll('.button-group');
-  for ( var i=0, len = buttonGroups.length; i < len; i++ ) {
-    var buttonGroup = buttonGroups[i];
-    radioButtonGroup( buttonGroup );
-  }
-  
-  function radioButtonGroup( buttonGroup ) {
-    buttonGroup.addEventListener( 'click', function( event ) {
+    // bind filter button click
+    var filtersElem = document.querySelector('.filters-button-group');
+    filtersElem.addEventListener( 'click', function( event ) {
       // only work with buttons
       if ( !matchesSelector( event.target, 'button' ) ) {
         return;
       }
-      buttonGroup.querySelector('.is-checked').classList.remove('is-checked');
-      event.target.classList.add('is-checked');
+      var filterValue = event.target.getAttribute('data-filter');
+      // use matching filter function
+      /* filterValue = filterValue; */
+      iso.arrange({ filter: filterValue });
+      
+      
     });
+  
+    let activeFiltersElem = document.querySelector('._filter-btn._active');
+    if(activeFiltersElem) {
+      iso.arrange({ filter: activeFiltersElem.getAttribute('data-filter') });
+      iso.layout();
+    }
+  
   }
-
 }
