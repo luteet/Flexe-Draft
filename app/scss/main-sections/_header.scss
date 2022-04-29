@@ -3,23 +3,31 @@
     left: 0; top: 0;
     width: 100%;
 
-    //padding-right: var(--popup-padding) !important;
+    padding-right: var(--popup-padding);
 
-    //transform: translate(0, var(--pos));
-
-    transition: transform .2s ease-in-out;
+    transition: opacity .2s ease-in-out;
 
     z-index: 150;
 
     &._active {
         position: fixed;
-        background-color: white;
+        background-color: var(--white);
 
-        box-shadow: 0 0 5px 1px rgba(#000000, 0.3);
+        box-shadow: 0 0 5px 1px rgba(#000000, 0.15);
     }
 
     &._active &__logo {
-        max-width: 125px;
+        @include _992 {
+            max-width: 125px;
+        }
+
+    }
+    
+    &._active &__container {
+        padding-top: 0px; padding-bottom: 0px;
+        @include _992 {
+            padding-top: 5px; padding-bottom: 5px;
+        }
     }
 
     &__logo {
@@ -66,14 +74,6 @@
 
         position: relative;
         
-        /* &::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 0;
-            width: 100%; height: 70px;
-            background: var(--white);
-            z-index: 2;
-        } */
     }
 
     &__nav {
@@ -383,6 +383,5 @@
             }
         }
     }
-
     
 }

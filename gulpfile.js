@@ -67,12 +67,6 @@ function scriptsLib() {
     return src([
         'node_modules/swiper/swiper-bundle.min.js', // Слайдер
         'node_modules/isotope-layout/dist/isotope.pkgd.min.js', // Filter
-        //'node_modules/sticky-js/dist/sticky.min.js' // Sticky
-        //'node_modules/jquery/dist/jquery.js', // jQuery
-        //'node_modules/slick-carousel/slick/slick.min.js', // Слайдер (jQuery)
-        //'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js', // Попап (jQuery)
-        //'node_modules/wowjs/dist/wow.min.js', // Анимация
-        //'node_modules/nouislider/dist/nouislider.min.js', // Кастомный input[range]
         'node_modules/smoothscroll-polyfill/dist/smoothscroll.min.js', // Полифил для window.scroll()
 
         'app/js/filter.js', // Фильтр div блоков
@@ -182,10 +176,6 @@ function CSSlibBuild() {
     return src([
         'node_modules/normalize.css/normalize.css',
         'node_modules/swiper/swiper-bundle.min.css', // Слайдер
-        //'node_modules/slick-carousel/slick/slick.css', // Слайдер (jQuery)
-        //'node_modules/magnific-popup/dist/magnific-popup.css' // Попап (jQuery)
-        //'node_modules/aos/dist/aos.css', // Анимация
-        //'node_modules/nouislider/dist/nouislider.css', // Кастомный input[range]
     ])
     .pipe(concat('_libs.scss'))
     .pipe(dest('app/scss'))

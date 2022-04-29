@@ -215,8 +215,6 @@ if(activeVideo) {
   activeVideo.currentTime = 2;
 }
 
-/* console.log(document.querySelector('._project-video._active')) */
-
 // =-=-=-=-=-=-=-=-=-=-=-=- <slider> -=-=-=-=-=-=-=-=-=-=-=-=
     
   let doneProjectsSlider = new Swiper('.done-projects__slider', {
@@ -397,6 +395,39 @@ function getCoords(elem) {
 }
 
 let offsetCheck = document.querySelector('.offset-check-js');
+let pageTop = [getCoords(offsetCheck).top, false];
+
+header.classList.add('_loaded');
+
+function scrollHeader() {
+
+  pageTop[0] = getCoords(offsetCheck).top;
+    
+  if(pageTop[0] >= 300 && pageTop[1] == false) {
+
+    pageTop[1] = true;
+      header.style.setProperty('opacity', '0');
+
+      setTimeout(function() {
+          header.classList.add('_active');
+          header.style.setProperty('opacity', '1');
+      },200);
+
+  } else if(pageTop[0] <= 300 && pageTop[1] == true) {
+
+    pageTop[1] = false;
+    header.style.setProperty('opacity', '0');
+
+      setTimeout(function() {
+        header.style.setProperty('opacity', '1');
+          header.classList.remove('_active');
+          
+      },200);
+
+  }
+  
+  
+}
 
 function scroll() {
   let top = getCoords(offsetCheck).top,
@@ -410,6 +441,10 @@ function scroll() {
       thisVideo.classList.add('_played');
     }
   })
+
+  scrollHeader();
+  
+
 }
 
 window.onscroll = scroll;
