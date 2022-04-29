@@ -61,43 +61,38 @@ body.addEventListener('click', function (event) {
 
         if(activeVideoItem && activeVideo && activeVideoReverse) {
           activeVideoReverse.load();
-          
 
-          activeVideoReverse.addEventListener('canplaythrough', function() {
+          activeVideoReverse.paybackRate = 1.75;
             activeVideoReverse.play();
+            
             setTimeout(() => {
               activeVideoReverse.classList.add('_active');
             },100)
 
             setTimeout(() => {
               activeVideo.classList.remove('_active');
-            },400)
+            },300)
 
             video.load();
-            video.addEventListener('canplaythrough', function() {
+            setTimeout(() => {
+
+              videoItem.classList.add('_active');
+              video.playbackRate = 1.75;
+              video.play();
+              
               setTimeout(() => {
+                video.classList.add('_active');
+              },100)
 
-                videoItem.classList.add('_active');
-                video.play();
-  
-                setTimeout(() => {
-                  video.classList.add('_active');
-                },100)
-  
-                setTimeout(() => {
-                  activeVideoItem.classList.remove('_active');
-                  activeVideoReverse.classList.remove('_active');
-  
-                  setTimeout(() => {
-                    videoCheck = true;
-                  },1500)
-  
-                },400)
+              activeVideoItem.classList.remove('_active');
+              activeVideoReverse.classList.remove('_active');
 
-              },1500)
-            })
+            },1100);
 
-          })
+            setTimeout(() => {
+              videoCheck = true;
+
+            },1500)
 
         } else {
           video.load();
