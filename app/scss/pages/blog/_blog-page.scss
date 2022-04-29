@@ -18,6 +18,9 @@
         margin-top: -2px;
         @include _768 {
             margin-top: 0px;
+            padding-top: 20px;
+        }
+        @include _992 {
             padding-top: 40px;
         }
     }
