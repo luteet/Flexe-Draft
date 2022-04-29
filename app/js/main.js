@@ -215,7 +215,7 @@ body.addEventListener('click', function (event) {
 
 let activeVideo = document.querySelector('._project-video._active');
 if(activeVideo) {
-  activeVideo.currentTime = 100;
+  activeVideo.currentTime = 2;
 }
 
 /* console.log(document.querySelector('._project-video._active')) */
