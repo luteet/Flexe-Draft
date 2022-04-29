@@ -4,8 +4,6 @@
         "testimonials": '',
         "case": '',
         "team": '',
-        
-        "class": '_gray-btn-bg',
     })
 
     <main class="wrapper">
@@ -106,14 +104,14 @@
                             <fieldset class="who-are-you__project--fieldset">
                                 <ul class="who-are-you__project--list">
                                     @@loop("html/home/who-are-you/_who-are-you-radio-btn.html", [
-                                        {"text": 'Gamefi', "value": 'gamefi', "id": '1', "data-id": 'play'},
-                                        {"text": 'NFT', "value": 'nft', "id": '2', "data-id": 'nft'},
-                                        {"text": 'Metaverse', "value": 'metaverse', "id": '3', "data-id": 'meta'},
-                                        {"text": 'ICO', "value": 'ico', "id": '4', "data-id": 'ico'},
-                                        {"text": 'DeFi', "value": 'defi', "id": '5', "data-id": 'defi'},
-                                        {"text": 'IEO', "value": 'ieo', "id": '6', "data-id": 'ieo'},
-                                        {"text": 'STO', "value": 'sto', "id": '7', "data-id": 'sto'},
-                                        {"text": 'Fintech', "value": 'fintech', "id": '8', "data-id": 'fintech'},
+                                        {"text": 'Gamefi', "value": 'gamefi', "id": '1', "data-id": 'play', "checked": 'checked'},
+                                        {"text": 'NFT', "value": 'nft', "id": '2', "data-id": 'nft', "checked": ''},
+                                        {"text": 'Metaverse', "value": 'metaverse', "id": '3', "data-id": 'meta', "checked": ''},
+                                        {"text": 'ICO', "value": 'ico', "id": '4', "data-id": 'ico', "checked": ''},
+                                        {"text": 'DeFi', "value": 'defi', "id": '5', "data-id": 'defi', "checked": ''},
+                                        {"text": 'IEO', "value": 'ieo', "id": '6', "data-id": 'ieo', "checked": ''},
+                                        {"text": 'STO', "value": 'sto', "id": '7', "data-id": 'sto', "checked": ''},
+                                        {"text": 'Fintech', "value": 'fintech', "id": '8', "data-id": 'fintech', "checked": ''},
                                     ])
                                 </ul>
                             </fieldset>
@@ -168,8 +166,8 @@
                                 <source src="video/home/who-are-you/reverse/NFT.mp4" type="video/mp4">
                             </video>
                         </div>
-                        <div class="who-are-you__video--item _project-item" id="project-play">
-                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video">
+                        <div class="who-are-you__video--item _project-item _active" id="project-play">
+                            <video width="750" height="750" preload="metadata" muted class="who-are-you__video--element _project-video _active">
                                 <source src="video/home/who-are-you/Play2earn.mp4" type="video/mp4">
                             </video>
                             <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video-reverse">

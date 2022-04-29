@@ -59,16 +59,6 @@ body.addEventListener('click', function (event) {
             activeVideo         = (activeVideoItem) ? activeVideoItem.querySelector('._project-video') : false,
             activeVideoReverse  = (activeVideoItem) ? activeVideoItem.querySelector('._project-video-reverse') : false;
 
-        /* video.addEventListener('canplaythrough', function() {
-          activeVideo.addEventListener('canplaythrough', function() {
-            activeVideoReverse.addEventListener('canplaythrough', function() {
-          
-            })
-          })
-        }) */
-
-        /* video.load(); */
-
         if(activeVideoItem && activeVideo && activeVideoReverse) {
           activeVideoReverse.load();
           
@@ -223,6 +213,12 @@ body.addEventListener('click', function (event) {
 
 })
 
+let activeVideo = document.querySelector('._project-video._active');
+if(activeVideo) {
+  activeVideo.currentTime = 100;
+}
+
+/* console.log(document.querySelector('._project-video._active')) */
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <slider> -=-=-=-=-=-=-=-=-=-=-=-=
     

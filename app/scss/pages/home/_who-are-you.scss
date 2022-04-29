@@ -1,5 +1,6 @@
 .who-are-you {
     background: var(--light-gray-2);
+    position: relative;
     //background: teal;
     // .who-are-you__container
 
@@ -15,8 +16,8 @@
             grid-template-columns: auto auto;
         }
         
-        position: relative;
-        z-index: 2;
+        /* position: relative;
+        z-index: 2; */
 
         &--header {
             position: relative;
@@ -253,26 +254,30 @@
     // .who-are-you__image
 
     &__video {
-        mix-blend-mode: color;
+        overflow: hidden;
         position: relative;
+        
 
-        display: grid;
+        /* display: grid;
         align-items: center;
         justify-content: center;
-        grid-template-columns: 100%;
+        grid-template-columns: 100%; */
         
-        width: 100%; min-height: 300px;
+        width: 100%; min-height: 350px;
         text-align: center;
 
         //aspect-ratio: 40/20;
 
         @include _768 {
-            min-height: 130%;
+            position: absolute;
+            right: 0; top: 0;
+
+            min-height: 100%;
             justify-content: flex-end;
             text-align: right;
             padding-right: 6px;
 
-            grid-column: 2/2; grid-row: 1/4;
+            
         }
 
         &--item {
@@ -280,7 +285,12 @@
             grid-template-columns: 100%;
             grid-area: 1/1;
 
-            position: relative;
+            position: absolute;
+            right: 0; top: 0;
+            width: 100%; height: 100%;
+            @include _768 {
+                width: 70%;
+            }
             
             &._project-item {
                 opacity: 0; visibility: hidden;
@@ -300,19 +310,21 @@
             left: 50%; top: 50%;
             transform: translate(-50%, -50%);
 
-            width: 90%; max-width: 500px;
+            width: 430px; max-width: 130%;
 
             @include _768 {
                 position: absolute;
                 left: 50%; top: 50%;
-                transform: translate(-75%,-57%);
+                transform: translate(-25%,-50%);
 
-                width: 190%; max-width: none;
+                width: 80%; max-width: none;
                 /* margin-top: -3px; margin-right: -100px; */
             }
             
             @include _992 {
+                width: 75%;
                 margin-right: 0;
+                transform: translate(-50%,-50%);
             }
 
             height: auto;

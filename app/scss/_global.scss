@@ -442,6 +442,9 @@ body {
 ._page-header-padding {
     padding: 52px 0 50px 0;
     @include _768 {
+        padding: 25px 0 50px 0;
+    }
+    @include _992 {
         padding: 62px 0 50px 0;
     }
 }

@@ -41,7 +41,10 @@
 
     &__add {
         
-        @include _992 {
+        /* @include _992 {
+            min-width: 176px;
+        } */
+        @include _container {
             min-width: 176px;
         }
         text-align: right;
@@ -159,6 +162,9 @@
             display: inline-block;
             padding: 10px 32px;
             @include _992 {
+                padding: 15px 20px;
+            }
+            @include _container {
                 padding: 15px 32px;
             }
             width: 100%;
@@ -251,6 +257,9 @@
             padding: 10px 32px;
             line-height: 135%;
             @include _992 {
+                padding: 15px 20px;
+            }
+            @include _container {
                 padding: 15px 32px;
             }
             width: 100%;
