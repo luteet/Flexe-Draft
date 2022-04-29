@@ -87,7 +87,7 @@ body.addEventListener('click', function (event) {
               activeVideoItem.classList.remove('_active');
               activeVideoReverse.classList.remove('_active');
 
-            },1100);
+            },1300);
 
             setTimeout(() => {
               videoCheck = true;
