@@ -8,6 +8,8 @@ const body = document.querySelector('body'),
 
 
 let thisTarget, faqCheck = true;
+let projectVideoCheck = true;
+let videoCheck = true;
 body.addEventListener('click', function (event) {
 
   thisTarget = event.target;
@@ -33,6 +35,102 @@ body.addEventListener('click', function (event) {
     document.querySelectorAll('._drop-down-btn').forEach(thisDropDownBtn => {
       thisDropDownBtn.classList.remove('_active');
     })
+  }
+
+
+
+  let projectLabel = thisTarget.closest('._project-label');
+  if(projectLabel) {
+    event.preventDefault();
+
+    let input = projectLabel.parentNode.querySelector('input');
+
+    if(input) {
+
+      if(input.checked != true && videoCheck) {
+
+        input.checked = true;
+        videoCheck = false;
+
+        let videoItem           = document.querySelector(`#${projectLabel.dataset.id}`),
+            video               = videoItem.querySelector(`._project-video`),
+            videoReverse        = videoItem.querySelector(`._project-video-reverse`),
+            activeVideoItem     = document.querySelector('._project-item._active'),
+            activeVideo         = (activeVideoItem) ? activeVideoItem.querySelector('._project-video') : false,
+            activeVideoReverse  = (activeVideoItem) ? activeVideoItem.querySelector('._project-video-reverse') : false;
+
+        /* video.addEventListener('canplaythrough', function() {
+          activeVideo.addEventListener('canplaythrough', function() {
+            activeVideoReverse.addEventListener('canplaythrough', function() {
+          
+            })
+          })
+        }) */
+
+        /* video.load(); */
+
+        if(activeVideoItem && activeVideo && activeVideoReverse) {
+          activeVideoReverse.load();
+          
+
+          activeVideoReverse.addEventListener('canplaythrough', function() {
+            activeVideoReverse.play();
+            setTimeout(() => {
+              activeVideoReverse.classList.add('_active');
+            },100)
+
+            setTimeout(() => {
+              activeVideo.classList.remove('_active');
+            },400)
+
+            video.load();
+            video.addEventListener('canplaythrough', function() {
+              setTimeout(() => {
+
+                videoItem.classList.add('_active');
+                video.play();
+  
+                setTimeout(() => {
+                  video.classList.add('_active');
+                },100)
+  
+                setTimeout(() => {
+                  activeVideoItem.classList.remove('_active');
+                  activeVideoReverse.classList.remove('_active');
+  
+                  setTimeout(() => {
+                    videoCheck = true;
+                  },1500)
+  
+                },400)
+
+              },1500)
+            })
+
+          })
+
+        } else {
+          video.load();
+          video.addEventListener('canplaythrough', function() {
+            videoItem.classList.add('_active');
+
+            setTimeout(() => {
+              
+              video.classList.add('_active');
+              video.play();
+  
+              videoCheck = true;
+  
+            },200)
+          })
+          
+
+        }
+
+      }
+      
+    }
+
   }
 
 

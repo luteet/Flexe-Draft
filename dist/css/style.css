@@ -145,6 +145,10 @@
   position: relative;
   font-weight: 500;
   color: var(--dark);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   transition: color 0.2s ease-in-out;
 }
 
@@ -212,17 +216,47 @@
   width: 100%;
 }
 
-.who-are-you__image {
+.who-are-you__video {
+  mix-blend-mode: color;
   position: relative;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
   align-items: center;
   justify-content: center;
+  -ms-grid-columns: 100%;
+  grid-template-columns: 100%;
   width: 100%;
   min-height: 300px;
   text-align: center;
 }
 
-.who-are-you__image--img {
+.who-are-you__video--item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+  grid-template-columns: 100%;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: 1/1;
+  position: relative;
+}
+
+.who-are-you__video--item._project-item {
+  opacity: 0;
+  visibility: hidden;
+  will-change: opacity;
+  /* transition: opacity .2s ease-in-out, visibility .2s ease-in-out; */
+}
+
+.who-are-you__video--item._project-item._active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.who-are-you__video--element {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: 1/1;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -230,9 +264,19 @@
           transform: translate(-50%, -50%);
   width: 90%;
   max-width: 500px;
-  -o-object-fit: contain;
-     object-fit: contain;
   height: auto;
+  /* opacity: 0; visibility: hidden;
+  will-change: opacity; */
+  /* &._project-video {
+      transition: opacity .5s ease-in-out, visibility .5s ease-in-out;
+  } */
+  display: none;
+}
+
+.who-are-you__video--element._active {
+  /* z-index: 2; */
+  display: block;
+  /* opacity: 1; visibility: visible; */
 }
 
 .services {
@@ -1895,21 +1939,27 @@
     width: auto;
   }
 
-  .who-are-you__image {
-    min-height: none;
+  .who-are-you__video {
+    min-height: 130%;
     justify-content: flex-end;
     text-align: right;
     padding-right: 6px;
+    -ms-grid-column: 2;
+    grid-column: 2/2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    grid-row: 1/4;
   }
 
-  .who-are-you__image--img {
-    position: static;
-    -webkit-transform: translate(0%, 0%);
-            transform: translate(0%, 0%);
-    width: 64%;
+  .who-are-you__video--element {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-75%, -57%);
+            transform: translate(-75%, -57%);
+    width: 190%;
     max-width: none;
-    margin-top: -3px;
-    margin-right: -100px;
+    /* margin-top: -3px; margin-right: -100px; */
   }
 
   .services__header {
@@ -2416,7 +2466,7 @@
     padding-bottom: 90px;
   }
 
-  .who-are-you__image--img {
+  .who-are-you__video--element {
     margin-right: 0;
   }
 

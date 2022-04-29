@@ -243,11 +243,10 @@
     <main class="wrapper">
         <section class="intro">
             <div class="intro__container _container">
-                <div class="intro__image">
-                    <picture>
-                        <source srcset="img/home/intro/image.webp" type="image/webp">
-                        <img src="img/home/intro/image.jpg" alt="" width="1096" height="734" class="intro__image--img">
-                    </picture>
+                <div class="intro__video">
+                    <video width="750" height="750" preload="metadata" muted autoplay loop poster="img/home/intro/image.webp" class="intro__video--element">
+                        <source src="video/home/intro/intro.mp4" type="video/mp4">
+                    </video>
                 </div>
                 <div class="intro__info">
                     <h1 class="intro__info--title _main-title">
@@ -411,42 +410,42 @@
                                 <ul class="who-are-you__project--list">
                                     <li class="who-are-you__project--item">
     <input type="radio" id="project-1" name="project" value="gamefi" class="who-are-you__project--radio-input">
-    <label for="project-1" class="who-are-you__project--radio-label">
+    <label for="project-1" class="who-are-you__project--radio-label _project-label" data-id="project-play">
         Gamefi
     </label>
 </li><li class="who-are-you__project--item">
     <input type="radio" id="project-2" name="project" value="nft" class="who-are-you__project--radio-input">
-    <label for="project-2" class="who-are-you__project--radio-label">
+    <label for="project-2" class="who-are-you__project--radio-label _project-label" data-id="project-nft">
         NFT
     </label>
 </li><li class="who-are-you__project--item">
     <input type="radio" id="project-3" name="project" value="metaverse" class="who-are-you__project--radio-input">
-    <label for="project-3" class="who-are-you__project--radio-label">
+    <label for="project-3" class="who-are-you__project--radio-label _project-label" data-id="project-meta">
         Metaverse
     </label>
 </li><li class="who-are-you__project--item">
     <input type="radio" id="project-4" name="project" value="ico" class="who-are-you__project--radio-input">
-    <label for="project-4" class="who-are-you__project--radio-label">
+    <label for="project-4" class="who-are-you__project--radio-label _project-label" data-id="project-ico">
         ICO
     </label>
 </li><li class="who-are-you__project--item">
     <input type="radio" id="project-5" name="project" value="defi" class="who-are-you__project--radio-input">
-    <label for="project-5" class="who-are-you__project--radio-label">
+    <label for="project-5" class="who-are-you__project--radio-label _project-label" data-id="project-defi">
         DeFi
     </label>
 </li><li class="who-are-you__project--item">
     <input type="radio" id="project-6" name="project" value="ieo" class="who-are-you__project--radio-input">
-    <label for="project-6" class="who-are-you__project--radio-label">
+    <label for="project-6" class="who-are-you__project--radio-label _project-label" data-id="project-ieo">
         IEO
     </label>
 </li><li class="who-are-you__project--item">
     <input type="radio" id="project-7" name="project" value="sto" class="who-are-you__project--radio-input">
-    <label for="project-7" class="who-are-you__project--radio-label">
+    <label for="project-7" class="who-are-you__project--radio-label _project-label" data-id="project-sto">
         STO
     </label>
 </li><li class="who-are-you__project--item">
     <input type="radio" id="project-8" name="project" value="fintech" class="who-are-you__project--radio-input">
-    <label for="project-8" class="who-are-you__project--radio-label">
+    <label for="project-8" class="who-are-you__project--radio-label _project-label" data-id="project-fintech">
         Fintech
     </label>
 </li>
@@ -454,11 +453,71 @@
                             </fieldset>
                         </div>
                     </div>
-                    <div class="who-are-you__info--image who-are-you__image">
-                        <picture>
-                            <source srcset="img/home/who-are-you/image.webp" type="image/webp">
-                            <img src="img/home/who-are-you/image.jpg" loading="lazy" alt="" width="750" height="750" class="who-are-you__image--img">
-                        </picture>
+                    <div class="who-are-you__info--video who-are-you__video">
+                        <div class="who-are-you__video--item _project-item" id="project-defi">
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video">
+                                <source src="video/home/who-are-you/defi.mp4" type="video/mp4">
+                            </video>
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video-reverse">
+                                <source src="video/home/who-are-you/reverse/defi.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="who-are-you__video--item _project-item" id="project-fintech">
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video">
+                                <source src="video/home/who-are-you/fintech.mp4" type="video/mp4">
+                            </video>
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video-reverse">
+                                <source src="video/home/who-are-you/reverse/fintech.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="who-are-you__video--item _project-item" id="project-ico">
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video">
+                                <source src="video/home/who-are-you/ICO.mp4" type="video/mp4">
+                            </video>
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video-reverse">
+                                <source src="video/home/who-are-you/reverse/ICO.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="who-are-you__video--item _project-item" id="project-ieo">
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video">
+                                <source src="video/home/who-are-you/IEO.mp4" type="video/mp4">
+                            </video>
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video-reverse">
+                                <source src="video/home/who-are-you/reverse/IEO_1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="who-are-you__video--item _project-item" id="project-meta">
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video">
+                                <source src="video/home/who-are-you/Meta.mp4" type="video/mp4">
+                            </video>
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video-reverse">
+                                <source src="video/home/who-are-you/reverse/Meta.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="who-are-you__video--item _project-item" id="project-nft">
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video">
+                                <source src="video/home/who-are-you/NFT.mp4" type="video/mp4">
+                            </video>
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video-reverse">
+                                <source src="video/home/who-are-you/reverse/NFT.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="who-are-you__video--item _project-item" id="project-play">
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video">
+                                <source src="video/home/who-are-you/Play2earn.mp4" type="video/mp4">
+                            </video>
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video-reverse">
+                                <source src="video/home/who-are-you/reverse/Play.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="who-are-you__video--item _project-item" id="project-sto">
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video">
+                                <source src="video/home/who-are-you/STO.mp4" type="video/mp4">
+                            </video>
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video-reverse">
+                                <source src="video/home/who-are-you/reverse/STo.mp4" type="video/mp4">
+                            </video>
+                        </div>
                     </div>
                     <div class="who-are-you__info--footer">
                         <fieldset class="who-are-you__project--fieldset">

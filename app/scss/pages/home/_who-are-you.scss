@@ -151,6 +151,8 @@
             font-weight: 500;
             color: var(--dark);
 
+            user-select: none;
+
             transition: color .2s ease-in-out;
 
             &:hover {
@@ -250,43 +252,82 @@
 
     // .who-are-you__image
 
-    &__image {
+    &__video {
+        mix-blend-mode: color;
         position: relative;
 
-        display: flex;
+        display: grid;
         align-items: center;
         justify-content: center;
+        grid-template-columns: 100%;
         
         width: 100%; min-height: 300px;
         text-align: center;
 
+        //aspect-ratio: 40/20;
+
         @include _768 {
-            min-height: none;
+            min-height: 130%;
             justify-content: flex-end;
             text-align: right;
             padding-right: 6px;
+
+            grid-column: 2/2; grid-row: 1/4;
+        }
+
+        &--item {
+            display: grid;
+            grid-template-columns: 100%;
+            grid-area: 1/1;
+
+            position: relative;
+            
+            &._project-item {
+                opacity: 0; visibility: hidden;
+                will-change: opacity;
+                /* transition: opacity .2s ease-in-out, visibility .2s ease-in-out; */
+                &._active {
+                    opacity: 1; visibility: visible;
+                }
+            }
         }
         // .who-are-you__image--img
 
-        &--img {
+        &--element {
+            grid-area: 1/1;
+            
             position: absolute;
             left: 50%; top: 50%;
             transform: translate(-50%, -50%);
 
             width: 90%; max-width: 500px;
+
             @include _768 {
-                position: static;
-                transform: translate(0%, 0%);
-                width: 64%; max-width: none;
-                margin-top: -3px; margin-right: -100px;
+                position: absolute;
+                left: 50%; top: 50%;
+                transform: translate(-75%,-57%);
+
+                width: 190%; max-width: none;
+                /* margin-top: -3px; margin-right: -100px; */
             }
             
             @include _992 {
                 margin-right: 0;
             }
-            
-            object-fit: contain;
+
             height: auto;
+
+            /* opacity: 0; visibility: hidden;
+            will-change: opacity; */
+            /* &._project-video {
+                transition: opacity .5s ease-in-out, visibility .5s ease-in-out;
+            } */
+            display: none;
+            &._active {
+                /* z-index: 2; */
+                display: block;
+                /* opacity: 1; visibility: visible; */
+            }
         }
     }
 }

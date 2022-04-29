@@ -11,11 +11,10 @@
     <main class="wrapper">
         <section class="intro">
             <div class="intro__container _container">
-                <div class="intro__image">
-                    <picture>
-                        <source srcset="img/home/intro/image.webp" type="image/webp">
-                        <img src="img/home/intro/image.jpg" alt="" width="1096" height="734" class="intro__image--img">
-                    </picture>
+                <div class="intro__video">
+                    <video width="750" height="750" preload="metadata" muted autoplay loop poster="img/home/intro/image.webp" class="intro__video--element">
+                        <source src="video/home/intro/intro.mp4" type="video/mp4">
+                    </video>
                 </div>
                 <div class="intro__info">
                     <h1 class="intro__info--title _main-title">
@@ -107,24 +106,84 @@
                             <fieldset class="who-are-you__project--fieldset">
                                 <ul class="who-are-you__project--list">
                                     @@loop("html/home/who-are-you/_who-are-you-radio-btn.html", [
-                                        {"text": 'Gamefi', "value": 'gamefi', "id": '1'},
-                                        {"text": 'NFT', "value": 'nft', "id": '2'},
-                                        {"text": 'Metaverse', "value": 'metaverse', "id": '3'},
-                                        {"text": 'ICO', "value": 'ico', "id": '4'},
-                                        {"text": 'DeFi', "value": 'defi', "id": '5'},
-                                        {"text": 'IEO', "value": 'ieo', "id": '6'},
-                                        {"text": 'STO', "value": 'sto', "id": '7'},
-                                        {"text": 'Fintech', "value": 'fintech', "id": '8'},
+                                        {"text": 'Gamefi', "value": 'gamefi', "id": '1', "data-id": 'play'},
+                                        {"text": 'NFT', "value": 'nft', "id": '2', "data-id": 'nft'},
+                                        {"text": 'Metaverse', "value": 'metaverse', "id": '3', "data-id": 'meta'},
+                                        {"text": 'ICO', "value": 'ico', "id": '4', "data-id": 'ico'},
+                                        {"text": 'DeFi', "value": 'defi', "id": '5', "data-id": 'defi'},
+                                        {"text": 'IEO', "value": 'ieo', "id": '6', "data-id": 'ieo'},
+                                        {"text": 'STO', "value": 'sto', "id": '7', "data-id": 'sto'},
+                                        {"text": 'Fintech', "value": 'fintech', "id": '8', "data-id": 'fintech'},
                                     ])
                                 </ul>
                             </fieldset>
                         </div>
                     </div>
-                    <div class="who-are-you__info--image who-are-you__image">
-                        <picture>
-                            <source srcset="img/home/who-are-you/image.webp" type="image/webp">
-                            <img src="img/home/who-are-you/image.jpg" loading="lazy" alt="" width="750" height="750" class="who-are-you__image--img">
-                        </picture>
+                    <div class="who-are-you__info--video who-are-you__video">
+                        <div class="who-are-you__video--item _project-item" id="project-defi">
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video">
+                                <source src="video/home/who-are-you/defi.mp4" type="video/mp4">
+                            </video>
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video-reverse">
+                                <source src="video/home/who-are-you/reverse/defi.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="who-are-you__video--item _project-item" id="project-fintech">
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video">
+                                <source src="video/home/who-are-you/fintech.mp4" type="video/mp4">
+                            </video>
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video-reverse">
+                                <source src="video/home/who-are-you/reverse/fintech.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="who-are-you__video--item _project-item" id="project-ico">
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video">
+                                <source src="video/home/who-are-you/ICO.mp4" type="video/mp4">
+                            </video>
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video-reverse">
+                                <source src="video/home/who-are-you/reverse/ICO.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="who-are-you__video--item _project-item" id="project-ieo">
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video">
+                                <source src="video/home/who-are-you/IEO.mp4" type="video/mp4">
+                            </video>
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video-reverse">
+                                <source src="video/home/who-are-you/reverse/IEO_1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="who-are-you__video--item _project-item" id="project-meta">
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video">
+                                <source src="video/home/who-are-you/Meta.mp4" type="video/mp4">
+                            </video>
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video-reverse">
+                                <source src="video/home/who-are-you/reverse/Meta.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="who-are-you__video--item _project-item" id="project-nft">
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video">
+                                <source src="video/home/who-are-you/NFT.mp4" type="video/mp4">
+                            </video>
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video-reverse">
+                                <source src="video/home/who-are-you/reverse/NFT.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="who-are-you__video--item _project-item" id="project-play">
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video">
+                                <source src="video/home/who-are-you/Play2earn.mp4" type="video/mp4">
+                            </video>
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video-reverse">
+                                <source src="video/home/who-are-you/reverse/Play.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="who-are-you__video--item _project-item" id="project-sto">
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video">
+                                <source src="video/home/who-are-you/STO.mp4" type="video/mp4">
+                            </video>
+                            <video width="750" height="750" preload="none" muted class="who-are-you__video--element _project-video-reverse">
+                                <source src="video/home/who-are-you/reverse/STo.mp4" type="video/mp4">
+                            </video>
+                        </div>
                     </div>
                     <div class="who-are-you__info--footer">
                         <fieldset class="who-are-you__project--fieldset">
