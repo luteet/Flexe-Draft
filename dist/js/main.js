@@ -8,7 +8,7 @@ const body = document.querySelector('body'),
 
 
 let thisTarget, faqCheck = true;
-let projectVideoCheck = true;
+let firstVideoStart = true;
 let videoCheck = true;
 body.addEventListener('click', function (event) {
 
@@ -60,41 +60,47 @@ body.addEventListener('click', function (event) {
             activeVideoReverse  = (activeVideoItem) ? activeVideoItem.querySelector('._project-video-reverse') : false;
 
         if(activeVideoItem && activeVideo && activeVideoReverse) {
-          /* activeVideoReverse.load(); */
+          
+          activeVideoReverse.paybackRate = 1.5;
+          activeVideoReverse.play();
+          
+          setTimeout(() => {
+            activeVideoReverse.classList.add('_active');
+          },200)
 
-          activeVideoReverse.paybackRate = 1.75;
-            activeVideoReverse.play();
-            
+          setTimeout(() => {
+            activeVideo.classList.remove('_active');
+          },300)
+
+          video.load();
+          video.addEventListener('canplaythrough', function() {
             setTimeout(() => {
-              activeVideoReverse.classList.add('_active');
-            },100)
 
-            setTimeout(() => {
-              activeVideo.classList.remove('_active');
-            },300)
+              videoItem.classList.add('_active');
+              video.playbackRate = 1.5;
+              video.play();
 
-            video.load();
-            video.addEventListener('canplaythrough', function() {
-              setTimeout(() => {
-
-                videoItem.classList.add('_active');
-                video.playbackRate = 1.75;
-                video.play();
+              video.addEventListener('playing', function() {
                 
                 setTimeout(() => {
                   video.classList.add('_active');
                 },100)
   
-                activeVideoItem.classList.remove('_active');
-                activeVideoReverse.classList.remove('_active');
-  
-              },1300);
-  
-              setTimeout(() => {
+                setTimeout(() => {
+                  activeVideoItem.classList.remove('_active');
+                  activeVideoReverse.classList.remove('_active');
+                },200)
+              })
+
+              video.addEventListener('ended', function() {
                 videoCheck = true;
-              },1500)
-            })
+                videoReverse.load();
+              })
+              
+            },1200);
+
             
+          })
 
         } else {
           video.load();
