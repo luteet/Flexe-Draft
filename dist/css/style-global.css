@@ -2344,7 +2344,6 @@ body._popup-active {
 .header._active {
   position: fixed;
   background-color: var(--white);
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.15);
 }
 
 .header._active .header__container {
@@ -2619,6 +2618,8 @@ body._popup-active {
   background: var(--light-gray-2);
   min-height: 100vh;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .intro__container {
@@ -3058,8 +3059,8 @@ body._popup-active {
   }
 
   .header._active .header__container {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 
   .header__logo {
@@ -3209,6 +3210,8 @@ body._popup-active {
     margin-right: 10px;
     max-width: 75%;
     width: 100%;
+    -webkit-transform: translate(33%, 0);
+            transform: translate(33%, 0);
   }
 
   .footer {
@@ -3266,8 +3269,8 @@ body._popup-active {
 
   .intro__video--element {
     max-width: 83%;
-    -webkit-transform: translate(23%, 0);
-            transform: translate(23%, 0);
+    -webkit-transform: translate(30%, 0);
+            transform: translate(30%, 0);
   }
 }
 

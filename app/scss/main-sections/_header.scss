@@ -13,7 +13,7 @@
         position: fixed;
         background-color: var(--white);
 
-        box-shadow: 0 0 5px 1px rgba(#000000, 0.15);
+        //box-shadow: 0 0 5px 1px rgba(#000000, 0.15);
     }
 
     &._active &__logo {
@@ -26,7 +26,7 @@
     &._active &__container {
         padding-top: 0px; padding-bottom: 0px;
         @include _992 {
-            padding-top: 5px; padding-bottom: 5px;
+            padding-top: 15px; padding-bottom: 15px;
         }
     }
 
