@@ -83,13 +83,13 @@
 
 .who-are-you__info--header {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   padding-top: 19px;
 }
 
 .who-are-you__info--footer {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   padding-bottom: 40px;
 }
 
@@ -220,10 +220,6 @@
 .who-are-you__video {
   overflow: hidden;
   position: relative;
-  /* display: grid;
-  align-items: center;
-  justify-content: center;
-  grid-template-columns: 100%; */
   width: 100%;
   min-height: 350px;
   text-align: center;
@@ -245,15 +241,11 @@
 }
 
 .who-are-you__video--item._project-item {
-  opacity: 0;
-  visibility: hidden;
-  will-change: opacity;
-  /* transition: opacity .2s ease-in-out, visibility .2s ease-in-out; */
+  z-index: -1;
 }
 
 .who-are-you__video--item._project-item._active {
-  opacity: 1;
-  visibility: visible;
+  z-index: 2;
 }
 
 .who-are-you__video--element {
@@ -268,18 +260,22 @@
   width: 430px;
   max-width: 130%;
   height: auto;
-  /* opacity: 0; visibility: hidden;
-  will-change: opacity; */
-  /* &._project-video {
-      transition: opacity .5s ease-in-out, visibility .5s ease-in-out;
-  } */
-  display: none;
+  z-index: -1;
+}
+
+.who-are-you__video--element::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: tan;
 }
 
 .who-are-you__video--element._active {
-  /* z-index: 2; */
-  display: block;
-  /* opacity: 1; visibility: visible; */
+  z-index: 2;
 }
 
 .services {
@@ -374,7 +370,6 @@
 
 .services-card__body::before {
   content: "\e901";
-  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "flexe-draft" !important;
   speak: never;
   font-style: normal;
@@ -382,7 +377,6 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--dark);
@@ -876,7 +870,7 @@
   border-radius: var(--br);
   background: linear-gradient(45deg, #1C4EFF, #1C92FF) border-box;
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
+  -webkit-mask-composite: xor;
   mask-composite: exclude;
 }
 
@@ -1969,7 +1963,6 @@
             transform: translate(-25%, -50%);
     width: 80%;
     max-width: none;
-    /* margin-top: -3px; margin-right: -100px; */
   }
 
   .services__header {
@@ -2016,6 +2009,7 @@
     width: 130px;
     height: 130px;
     z-index: -1;
+    display: block;
   }
 
   .services-card__body::before {
