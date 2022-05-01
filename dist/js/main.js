@@ -74,25 +74,27 @@ body.addEventListener('click', function (event) {
             },300)
 
             video.load();
-            setTimeout(() => {
-
-              videoItem.classList.add('_active');
-              video.playbackRate = 1.75;
-              video.play();
-              
+            video.addEventListener('canplaythrough', function() {
               setTimeout(() => {
-                video.classList.add('_active');
-              },100)
 
-              activeVideoItem.classList.remove('_active');
-              activeVideoReverse.classList.remove('_active');
-
-            },1300);
-
-            setTimeout(() => {
-              videoCheck = true;
-
-            },1500)
+                videoItem.classList.add('_active');
+                video.playbackRate = 1.75;
+                video.play();
+                
+                setTimeout(() => {
+                  video.classList.add('_active');
+                },100)
+  
+                activeVideoItem.classList.remove('_active');
+                activeVideoReverse.classList.remove('_active');
+  
+              },1300);
+  
+              setTimeout(() => {
+                videoCheck = true;
+              },1500)
+            })
+            
 
         } else {
           video.load();
