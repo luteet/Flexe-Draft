@@ -2003,10 +2003,16 @@
 
   .services-card__body {
     border-bottom: 0;
+    border: 1px solid var(--white);
+    transition: border 0.2s ease-in-out;
     padding: 20px 20px;
     background: var(--white);
     border-radius: var(--br);
     min-height: 212px;
+  }
+
+  .services-card__body:hover {
+    border-color: var(--accent);
   }
 
   .services-card__body::after {

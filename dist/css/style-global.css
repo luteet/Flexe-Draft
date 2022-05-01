@@ -2944,7 +2944,7 @@ body._popup-active {
 }
 
 .intro__info--scroll-down {
-  margin: 10px;
+  margin: 25px 10px 10px 10px;
   font-weight: 400;
   font-size: 1rem;
   color: var(--gray);

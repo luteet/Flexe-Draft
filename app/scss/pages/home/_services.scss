@@ -153,7 +153,15 @@
         border-bottom: 1px solid var(--light-gray);
         
         @include _768 {
+            
             border-bottom: 0;
+
+            border: 1px solid var(--white);
+            transition: border .2s ease-in-out;
+            &:hover {
+                border-color: var(--accent);
+            }
+
             padding: 20px 20px;
             background: var(--white);
             border-radius: var(--br);
