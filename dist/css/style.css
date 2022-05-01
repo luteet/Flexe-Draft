@@ -1422,6 +1422,11 @@
   line-height: 125%;
   font-weight: 600;
   font-size: 1rem;
+  transition: color 0.2s ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .faq__item--content {

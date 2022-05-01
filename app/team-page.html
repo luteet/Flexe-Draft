@@ -9,7 +9,7 @@
 <main class="wrapper">
     <section class="team-page _section-padding">
         <div class="team-page__container _container">
-            <div class="team-page__header _txt-center _page-header-padding">
+            <div class="team-page__header _txt-center _page-header-padding wow animate__fadeIn">
                 <h2 class="team-page__section-title _section-title">
                     Team
                 </h2>
@@ -56,11 +56,11 @@
     </section>
     <section class="bases _section-min-padding">
         <div class="bases__container _container">
-            <h2 class="bases__section-title _section-subtitle _super-min _txt-center">
+            <h2 class="bases__section-title _section-subtitle _super-min _txt-center wow animate__fadeInUp">
                 We are based in <strong>Silicon Oasis,</strong> Dubai,<br> United Arab Emirates
             </h2>
             <div class="bases__slider swiper mob-slider">
-                <ul class="bases__list swiper-wrapper">
+                <ul class="bases__list swiper-wrapper wow animate__fadeIn" data-wow-delay="0.4s">
                     <li class="bases__card swiper-slide">
                         <div class="bases__card--body">
                             <picture>
@@ -86,7 +86,7 @@
                         </div>
                     </li>
                 </ul>
-                <div class="bases__pagination slider-min-pagination">
+                <div class="bases__pagination slider-min-pagination wow animate__fadeIn">
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
@@ -94,10 +94,10 @@
     </section>
     <section class="faq _section-min-padding">
         <div class="faq__container _container">
-            <h2 class="faq__section-title _section-subtitle _txt-center">
+            <h2 class="faq__section-title _section-subtitle _txt-center wow animate__fadeInUp">
                 FAQ
             </h2>
-            <ul class="faq__list">
+            <ul class="faq__list wow animate__fadeInUp">
                 @@loop("html/team-page/_faq-item.html", [
                     {"title": 'Whats methods of payment do you accept?', "text": 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam iure est ipsa. Pariatur velit ut eum sapiente cupiditate molestiae itaque vel iusto laborum perspiciatis earum eaque, nemo libero? Sunt, corporis?'},
                     {"title": 'Do you accept native tokens?', "text": 'If it was 2017, we would accept them, but we no longer do it and payment in tokens is not possible.'},

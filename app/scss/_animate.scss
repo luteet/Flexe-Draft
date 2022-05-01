@@ -259,7 +259,8 @@
 
 
 .wow {
-    opacity: 0;
+    will-change: opacity;
+    opacity: 0; visibility: hidden;
     animation-duration: 1s;
     animation-timing-function: ease;
     animation-delay: 0s;
