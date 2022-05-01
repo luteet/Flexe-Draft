@@ -70,9 +70,10 @@ body.addEventListener('click', function (event) {
 
           setTimeout(() => {
             activeVideo.classList.remove('_active');
+            video.load();
           },300)
 
-          video.load();
+          
           video.addEventListener('canplaythrough', function() {
             setTimeout(() => {
 
