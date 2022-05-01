@@ -193,9 +193,20 @@ body {
         z-index: -1;
     }
 
+    & span {
+        background: var(--gradient);
+        background-clip: text;
+        color: var(--white);
+
+        transition: color .2s ease-in-out;
+    }
+
     &:hover {
         color: transparent;
         -webkit-text-fill-color: transparent;
+        & span {
+            color: transparent;
+        }
         &::after {
             opacity: 0;
         }
@@ -216,6 +227,9 @@ body {
     
     &._transparent {
         color: transparent;
+        & span {
+            color: transparent;
+        }
         &::after {
             opacity: 0;
         }
@@ -232,6 +246,9 @@ body {
                 opacity: 1;
             }
         }
+        &:hover span {
+            color: var(--white);
+        }
     }
 
     &._dark {
@@ -244,10 +261,18 @@ body {
         &::before, &::after {
             display: none;
         }
+        & span {
+            color: var(--dark);
+        }
         &:hover {
+            
             color: var(--white);
             background: var(--accent);
             border-color: var(--accent);
+        }
+
+        &:hover span {
+            color: var(--white);
         }
     }
 
@@ -258,6 +283,9 @@ body {
         font-weight: 500;
         font-size: 1rem;
         color: var(--accent);
+        & span {
+            color: var(--accent);
+        }
 
         padding: 12px 24px;
 
@@ -267,6 +295,9 @@ body {
         &:hover {
             color: var(--white);
             background: var(--accent);
+        }
+        &:hover span {
+            color: var(--white);
         }
     }
 
@@ -284,6 +315,10 @@ body {
         color: var(--accent);
         background-clip: inherit;
         background: var(--white);
+
+        & span {
+            color: var(--accent);
+        }
 
         transition: background .2s ease-in-out;
 

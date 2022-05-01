@@ -1530,9 +1530,21 @@ body._popup-active {
   z-index: -1;
 }
 
+._btn span {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: var(--white);
+  transition: color 0.2s ease-in-out;
+}
+
 ._btn:hover {
   color: transparent;
   -webkit-text-fill-color: transparent;
+}
+
+._btn:hover span {
+  color: transparent;
 }
 
 ._btn:hover::after {
@@ -1557,6 +1569,10 @@ body._popup-active {
   color: transparent;
 }
 
+._btn._transparent span {
+  color: transparent;
+}
+
 ._btn._transparent::after {
   opacity: 0;
 }
@@ -1578,6 +1594,10 @@ body._popup-active {
   opacity: 1;
 }
 
+._btn._transparent:hover span {
+  color: var(--white);
+}
+
 ._btn._dark {
   color: var(--dark);
   border: 1px solid var(--dark);
@@ -1591,10 +1611,18 @@ body._popup-active {
   display: none;
 }
 
+._btn._dark span {
+  color: var(--dark);
+}
+
 ._btn._dark:hover {
   color: var(--white);
   background: var(--accent);
   border-color: var(--accent);
+}
+
+._btn._dark:hover span {
+  color: var(--white);
 }
 
 ._btn._alt {
@@ -1611,9 +1639,17 @@ body._popup-active {
   display: none;
 }
 
+._btn._alt span {
+  color: var(--accent);
+}
+
 ._btn._alt:hover {
   color: var(--white);
   background: var(--accent);
+}
+
+._btn._alt:hover span {
+  color: var(--white);
 }
 
 ._btn._light {
@@ -1630,6 +1666,10 @@ body._popup-active {
 ._btn._light::before,
 ._btn._light::after {
   display: none;
+}
+
+._btn._light span {
+  color: var(--accent);
 }
 
 ._btn._light:hover {
