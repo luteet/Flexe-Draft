@@ -60,7 +60,7 @@ body.addEventListener('click', function (event) {
             activeVideoReverse  = (activeVideoItem) ? activeVideoItem.querySelector('._project-video-reverse') : false;
 
         if(activeVideoItem && activeVideo && activeVideoReverse) {
-          activeVideoReverse.load();
+          /* activeVideoReverse.load(); */
 
           activeVideoReverse.paybackRate = 1.75;
             activeVideoReverse.play();
@@ -96,6 +96,7 @@ body.addEventListener('click', function (event) {
 
         } else {
           video.load();
+          
           video.addEventListener('canplaythrough', function() {
             videoItem.classList.add('_active');
 
@@ -208,12 +209,12 @@ body.addEventListener('click', function (event) {
 
 })
 
-let activeVideo = document.querySelector('._project-video._active');
+/* let activeVideo = document.querySelector('._project-video._active');
 if(activeVideo) {
   activeVideo.load();
   
   activeVideo.currentTime = 2;
-}
+} */
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <slider> -=-=-=-=-=-=-=-=-=-=-=-=
     
