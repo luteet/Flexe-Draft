@@ -1,10 +1,39 @@
-document.addEventListener("DOMContentLoaded", function(event) {
 
+function browserDetect(){
+                 
+  let userAgent = navigator.userAgent;
+  let browserName;
+  
+  if(userAgent.match(/chrome|chromium|crios/i)){
+      browserName = "chrome";
+    }else if(userAgent.match(/firefox|fxios/i)){
+      browserName = "firefox";
+    }  else if(userAgent.match(/safari/i)){
+      browserName = "safari";
+    }else if(userAgent.match(/opr\//i)){
+      browserName = "opera";
+    } else if(userAgent.match(/edg/i)){
+      browserName = "edge";
+    }else{
+      browserName="No browser detection";
+    }
+  
+   return browserName;
+}
+
+if(browserDetect() == "safari") {
+  let body = document.querySelector('body');
+  body.style.setProperty('--accent', (body.dataset.safariAccent) ? body.dataset.safariAccent : '#1e61ff');
+}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+//1e61ff
 const body = document.querySelector('body'),
     html = document.querySelector('html'),
     menu = document.querySelectorAll('._burger, .header__nav, body'),
     burger = document.querySelector('._burger'),
     header = document.querySelector('.header');
+
 
 
 let thisTarget, faqCheck = true;

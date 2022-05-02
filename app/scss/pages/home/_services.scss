@@ -116,11 +116,18 @@
     // .services__list
 
     &__list {
-        
+        display: flex;
+        flex-wrap: wrap;
+
         padding-top: 20px;
         @include _768 {
             padding-top: 55px;
             margin: -10px;
+            
+            gap: 20px;
+        }
+        @include _992 {
+            
         }
         
     }

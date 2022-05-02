@@ -66,9 +66,10 @@ function webpConvert() {
 function scriptsLib() {
     return src([
         'node_modules/swiper/swiper-bundle.min.js', // Слайдер
-        'node_modules/isotope-layout/dist/isotope.pkgd.min.js', // Filter
+        'node_modules/isotope-layout/dist/isotope.pkgd.min.js', // Фильтр div блоков
         'node_modules/smoothscroll-polyfill/dist/smoothscroll.min.js', // Полифил для window.scroll()
         'node_modules/wowjs/dist/wow.min.js', // Анимация
+        //'node_modules/detect-browser/es/index.js', // Опредилить браузер
 
         'app/js/filter.js', // Фильтр div блоков
         'app/js/copyToClipboard.js', // Копирование данных из input в буфер обмена

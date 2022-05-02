@@ -340,6 +340,8 @@
 }
 
 .services__list {
+  display: flex;
+  flex-wrap: wrap;
   padding-top: 20px;
 }
 
@@ -1994,6 +1996,7 @@
   .services__list {
     padding-top: 55px;
     margin: -10px;
+    gap: 20px;
   }
 
   .services__card {
