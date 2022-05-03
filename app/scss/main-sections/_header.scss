@@ -24,7 +24,7 @@
     }
     
     &._active &__container {
-        padding-top: 0px; padding-bottom: 0px;
+        padding-top: 5px; padding-bottom: 5px;
         @include _992 {
             padding-top: 15px; padding-bottom: 15px;
         }
