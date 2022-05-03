@@ -76,11 +76,6 @@
   background: var(--bg, var(--light-gray-2));
 }
 
-.who-are-you__info {
-  /* position: relative;
-  z-index: 2; */
-}
-
 .who-are-you__info--header {
   position: relative;
   z-index: 3;
@@ -2508,6 +2503,7 @@
 
   .who-are-you__video--element {
     width: 75%;
+    max-width: 756px;
     margin-right: 0;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
