@@ -28,7 +28,7 @@ if(browserDetect() == "safari") {
   body.style.setProperty('--accent', (body.dataset.safariAccent) ? body.dataset.safariAccent : '#1e61ff');
   body.style.setProperty('--light-gray-2', (body.dataset.safariLightGrayBg) ? body.dataset.safariLightGrayBg : '#eef1f6');
   if(changeBg) {
-    changeBg.style.setProperty('--bg', (changeBg.dataset.bg) ? changeBg.dataset.bg : '#EFF0F5');
+    changeBg.style.setProperty('--bg', (changeBg.dataset.bg) ? changeBg.dataset.bg : '#f2f3f7');
   }
   
 
