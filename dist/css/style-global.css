@@ -2947,17 +2947,7 @@ body._popup-active {
 }
 
 .intro__info--scroll-down {
-  margin: 25px 10px 10px 10px;
-  font-weight: 400;
-  font-size: 1rem;
-  color: var(--gray);
-  display: inline-flex;
-  align-items: center;
-  transition: color 0.2s ease-in-out;
-}
-
-.intro__info--scroll-down:hover {
-  color: var(--accent);
+  display: none;
 }
 
 .intro__info--scroll-down-icon {
@@ -3472,6 +3462,20 @@ body._popup-active {
   .intro__info--footer {
     align-items: flex-start;
     padding-top: 48px;
+  }
+
+  .intro__info--scroll-down {
+    margin: 25px 10px 10px 10px;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--gray);
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .intro__info--scroll-down:hover {
+    color: var(--accent);
   }
 
   .intro__social {

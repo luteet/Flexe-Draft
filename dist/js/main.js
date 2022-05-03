@@ -67,8 +67,6 @@ if(getMobileOperatingSystem() == "iOS") {
     })
   }
   
-  
-  
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {

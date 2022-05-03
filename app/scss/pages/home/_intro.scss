@@ -105,23 +105,29 @@
         // .intro__info--scroll-down
 
         &--scroll-down {
-            margin: 25px 10px 10px 10px;
+            display: none;
+            @include _992 {
+                margin: 25px 10px 10px 10px;
+
+                font-weight: 400;
+                font-size: 1rem;
+                color: var(--gray);
+    
+                display: inline-flex;
+                align-items: center;
+    
+                transition: color .2s ease-in-out;
+                &:hover {
+                    color: var(--accent);
+                }
+            }
+            
             @media(min-width: 1150px) {
                 position: absolute;
                 left: 0; bottom: 23px;
             }
 
-            font-weight: 400;
-            font-size: 1rem;
-            color: var(--gray);
-
-            display: inline-flex;
-            align-items: center;
-
-            transition: color .2s ease-in-out;
-            &:hover {
-                color: var(--accent);
-            }
+            
         }
 
         // .intro__info--scroll-down-icon
