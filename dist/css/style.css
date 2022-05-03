@@ -931,9 +931,9 @@
 }
 
 .contact-us__video--element {
-  max-width: 400px;
+  max-width: 500px;
   height: 350px;
-  margin: -50px 0;
+  margin: -80px 0;
   width: 100%;
   /* object-fit: contain; */
 }
@@ -1801,6 +1801,12 @@
   }
 }
 
+@media (min-width: 426px) {
+  .contact-us__video--element {
+    margin: -50px 0;
+  }
+}
+
 @media (min-width: 500px) {
   .about-us__list {
     justify-content: space-evenly;
@@ -2510,7 +2516,7 @@
   }
 
   .contact-us__video {
-    padding: 50px 50px 50px 0;
+    padding: 50px 0px 50px 0;
   }
 
   .contact-us__video--element {
