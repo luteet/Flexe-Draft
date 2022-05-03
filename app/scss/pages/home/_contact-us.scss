@@ -3,6 +3,8 @@
     @include _992 {
         padding: 80px 0 40px 0;
     }
+
+    background: var(--ios-bg, var(--accent));
     // .contact-us__container
 
     &__container {
@@ -63,7 +65,7 @@
 
         display: flex;
         justify-content: flex-end;
-        
+
         &--body {
             max-width: 100%;
             @include _992 {

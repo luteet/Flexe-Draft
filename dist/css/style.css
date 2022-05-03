@@ -915,6 +915,7 @@
 
 .contact-us {
   padding: 0 0 66px 0;
+  background: var(--ios-bg, var(--accent));
 }
 
 .contact-us__container {

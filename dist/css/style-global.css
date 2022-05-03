@@ -2300,7 +2300,7 @@ body._popup-active {
   top: 0;
   width: 100%;
   height: 100%;
-  border: 3px solid transparent;
+  border: 2px solid transparent;
   border-radius: 50px;
   background: linear-gradient(45deg, #1C4EFF, #1C92FF) border-box;
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
@@ -2355,7 +2355,7 @@ body._popup-active {
   top: 0;
   width: 100%;
   height: 100%;
-  border: 3px solid transparent;
+  border: 2px solid transparent;
   border-radius: 50px;
   background: linear-gradient(45deg, #1C4EFF, #1C92FF) border-box;
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
@@ -2702,6 +2702,7 @@ body._popup-active {
 
 .header__nav--list {
   flex: 1 1 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2714,11 +2715,11 @@ body._popup-active {
 
 .header__nav--link {
   display: inline-block;
-  padding: 10px 32px;
+  padding: 15px 32px;
+  font-size: 1.3125rem;
   width: 100%;
   color: var(--dark);
   font-weight: 500;
-  font-size: 1rem;
   line-height: 135%;
   transition: color 0.2s ease-in-out;
 }
@@ -2782,8 +2783,9 @@ body._popup-active {
 .header__drop-down--btn {
   text-align: left;
   display: inline-block;
-  padding: 10px 32px;
+  padding: 15px 32px;
   line-height: 135%;
+  font-size: 1.3125rem;
   width: 100%;
   background-color: transparent;
 }
@@ -2810,7 +2812,8 @@ body._popup-active {
 
 .header__drop-down--link {
   display: block;
-  padding: 6px 24px;
+  padding: 8px 24px;
+  font-size: 1.125rem;
 }
 
 .header__social {
@@ -3389,6 +3392,7 @@ body._popup-active {
     flex-direction: row;
     flex-wrap: wrap;
     height: auto;
+    width: auto;
   }
 
   .header__nav--item {
@@ -3396,6 +3400,7 @@ body._popup-active {
   }
 
   .header__nav--link {
+    font-size: 1rem;
     padding: 15px 20px;
   }
 
@@ -3410,6 +3415,7 @@ body._popup-active {
   }
 
   .header__drop-down--btn {
+    font-size: 1rem;
     padding: 15px 20px;
   }
 
@@ -3425,6 +3431,7 @@ body._popup-active {
   }
 
   .header__drop-down--link {
+    font-size: 1rem;
     padding: 8px 24px;
   }
 

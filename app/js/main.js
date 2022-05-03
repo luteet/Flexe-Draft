@@ -23,15 +23,52 @@ function browserDetect(){
 
 if(browserDetect() == "safari") {
   let body = document.querySelector('body'),
-      changeBg = document.querySelector('._change-bg');
+      changeBg = document.querySelectorAll('._change-bg');
 
   body.style.setProperty('--accent', (body.dataset.safariAccent) ? body.dataset.safariAccent : '#1e61ff');
   body.style.setProperty('--light-gray-2', (body.dataset.safariLightGrayBg) ? body.dataset.safariLightGrayBg : '#eef1f6');
-  if(changeBg) {
-    changeBg.style.setProperty('--bg', (changeBg.dataset.bg) ? changeBg.dataset.bg : '#f2f3f7');
+
+  
+  if(changeBg[0]) {
+    changeBg.forEach(thisElement => {
+      thisElement.style.setProperty('--bg', (thisElement.dataset.bg) ? thisElement.dataset.bg : '#f2f3f7');
+    })
   }
   
 
+}
+
+function getMobileOperatingSystem() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Windows Phone must come first because its UA also contains "Android"
+    if (/windows phone/i.test(userAgent)) {
+        return "Windows Phone";
+    }
+
+    if (/android/i.test(userAgent)) {
+        return "Android";
+    }
+
+    // iOS detection from: http://stackoverflow.com/a/9039885/177710
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "iOS";
+    }
+
+    return "unknown";
+}
+
+if(getMobileOperatingSystem() == "iOS") {
+  let changeIosBg = document.querySelectorAll('._change-ios-bg');
+
+  if(changeIosBg[0]) {
+    changeIosBg.forEach(thisElement => {
+      thisElement.style.setProperty('--ios-bg', (thisElement.dataset.iosBg) ? thisElement.dataset.iosBg : '#1e61ff');
+    })
+  }
+  
+  
+  
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
