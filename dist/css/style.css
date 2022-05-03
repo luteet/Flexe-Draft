@@ -72,8 +72,8 @@
 }
 
 .who-are-you {
-  background: var(--light-gray-2);
   position: relative;
+  background: var(--bg, var(--light-gray-2));
 }
 
 .who-are-you__info {

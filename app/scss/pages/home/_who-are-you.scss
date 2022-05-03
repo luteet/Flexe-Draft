@@ -1,6 +1,8 @@
 .who-are-you {
-    background: var(--light-gray-2);
+    //background: var(--light-gray-2);
     position: relative;
+
+    background: var(--bg, var(--light-gray-2));
     //background: teal;
     // .who-are-you__container
 

@@ -22,9 +22,16 @@ function browserDetect(){
 }
 
 if(browserDetect() == "safari") {
-  let body = document.querySelector('body');
+  let body = document.querySelector('body'),
+      changeBg = document.querySelector('._change-bg');
+
   body.style.setProperty('--accent', (body.dataset.safariAccent) ? body.dataset.safariAccent : '#1e61ff');
   body.style.setProperty('--light-gray-2', (body.dataset.safariLightGrayBg) ? body.dataset.safariLightGrayBg : '#eef1f6');
+  if(changeBg) {
+    changeBg.style.setProperty('--bg', (changeBg.dataset.bg) ? changeBg.dataset.bg : '#EFF0F5');
+  }
+  
+
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
