@@ -27,7 +27,7 @@ if(browserDetect() == "safari") {
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
-//1e61ff
+
 const body = document.querySelector('body'),
     html = document.querySelector('html'),
     menu = document.querySelectorAll('._burger, .header__nav, body'),
@@ -37,7 +37,6 @@ const body = document.querySelector('body'),
 
 
 let thisTarget, faqCheck = true;
-let firstVideoStart = true;
 let videoCheck = true;
 body.addEventListener('click', function (event) {
 
@@ -48,7 +47,6 @@ body.addEventListener('click', function (event) {
           elem.classList.toggle('_active')
       })
   }
-
 
 
   let dropDownBtn = thisTarget.closest('._drop-down-btn');
@@ -246,13 +244,6 @@ body.addEventListener('click', function (event) {
   }
 
 })
-
-/* let activeVideo = document.querySelector('._project-video._active');
-if(activeVideo) {
-  activeVideo.load();
-  
-  activeVideo.currentTime = 2;
-} */
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <slider> -=-=-=-=-=-=-=-=-=-=-=-=
     
@@ -476,8 +467,12 @@ function scroll() {
     let videoOffsetTop = thisVideo.offsetTop;
 
     if(top >= videoOffsetTop - window.innerHeight && !thisVideo.classList.contains('_played')) {
-      thisVideo.play();
-      thisVideo.classList.add('_played');
+      thisVideo.load();
+      thisVideo.addEventListener('canplaythrough', function() {
+        thisVideo.play();
+        thisVideo.classList.add('_played');
+      })
+      
     }
   })
 

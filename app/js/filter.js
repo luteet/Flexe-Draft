@@ -15,10 +15,7 @@ window.onload = function() {
       }
       var filterValue = event.target.getAttribute('data-filter');
       // use matching filter function
-      /* filterValue = filterValue; */
       iso.arrange({ filter: filterValue });
-      
-      
     });
   
     let activeFiltersElem = document.querySelector('._filter-btn._active');
