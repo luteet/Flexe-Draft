@@ -24,6 +24,7 @@ function browserDetect(){
 if(browserDetect() == "safari") {
   let body = document.querySelector('body');
   body.style.setProperty('--accent', (body.dataset.safariAccent) ? body.dataset.safariAccent : '#1e61ff');
+  body.style.setProperty('--light-gray-2', (body.dataset.safariLightGrayBg) ? body.dataset.safariLightGrayBg : '#eef1f6');
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
