@@ -69,6 +69,10 @@ if(getMobileOperatingSystem() == "iOS") {
   
 }
 
+if(document.querySelector('_project-item._active')) {
+  document.querySelector('_project-item._active').querySelector('._project-video-reverse').load();
+}
+
 document.addEventListener("DOMContentLoaded", function(event) {
 
 const body = document.querySelector('body'),
@@ -130,7 +134,7 @@ body.addEventListener('click', function (event) {
             activeVideoReverse  = (activeVideoItem) ? activeVideoItem.querySelector('._project-video-reverse') : false;
 
         if(activeVideoItem && activeVideo && activeVideoReverse) {
-
+          
           projectLabel.insertAdjacentHTML('afterbegin', '<div class="loading-element lds-ring"><div></div><div></div><div></div><div></div></div>')
           projectLabel.classList.add('_loading');
           
@@ -187,6 +191,7 @@ body.addEventListener('click', function (event) {
 
         } else {
           video.load();
+          
 
           video.addEventListener('loadeddata', function() {
             
