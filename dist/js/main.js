@@ -112,7 +112,7 @@ body.addEventListener('click', function (event) {
   let projectLabel = thisTarget.closest('._project-label');
   if(projectLabel) {
     event.preventDefault();
-
+    
     let input = projectLabel.parentNode.querySelector('input');
 
     if(input) {
@@ -130,6 +130,9 @@ body.addEventListener('click', function (event) {
             activeVideoReverse  = (activeVideoItem) ? activeVideoItem.querySelector('._project-video-reverse') : false;
 
         if(activeVideoItem && activeVideo && activeVideoReverse) {
+
+          projectLabel.insertAdjacentHTML('afterbegin', '<div class="loading-element lds-ring"><div></div><div></div><div></div><div></div></div>')
+          projectLabel.classList.add('_loading');
           
           activeVideoReverse.paybackRate = 1.5;
           activeVideoReverse.play();
@@ -142,54 +145,65 @@ body.addEventListener('click', function (event) {
             activeVideo.classList.remove('_active');
             video.load();
           },300)
-
           
-          video.addEventListener('canplaythrough', function() {
-            setTimeout(() => {
-
-              videoItem.classList.add('_active');
-              video.playbackRate = 1.5;
-              video.play();
-
-              video.addEventListener('playing', function() {
-                
-                setTimeout(() => {
-                  video.classList.add('_active');
-                },100)
-  
-                setTimeout(() => {
-                  activeVideoItem.classList.remove('_active');
-                  activeVideoReverse.classList.remove('_active');
-                },200)
-              })
-
-              video.addEventListener('ended', function() {
-                videoCheck = true;
-                videoReverse.load();
-              })
+          video.addEventListener('loadeddata', function() {
+            
+            video.addEventListener('canplaythrough', function() {
               
-            },1200);
+              setTimeout(() => {
 
+                videoItem.classList.add('_active');
+                video.playbackRate = 1.5;
+                video.play();
+
+                video.addEventListener('playing', function() {
+                  
+                  setTimeout(() => {
+                    video.classList.add('_active');
+                  },100)
+    
+                  setTimeout(() => {
+                    activeVideoItem.classList.remove('_active');
+                    activeVideoReverse.classList.remove('_active');
+                  },200)
+                })
+
+                video.addEventListener('ended', function() {
+                  
+                  videoReverse.load();
+                  videoReverse.addEventListener('loadeddata', function() {
+                    videoReverse.addEventListener('canplaythrough', function() {
+                      videoCheck = true;
+                      if(projectLabel.querySelector('.loading-element')) projectLabel.querySelector('.loading-element').remove();
+                      projectLabel.classList.remove('_loading');
+                    });
+                  });
+                })
+                
+              },500);
+            })
             
           })
 
         } else {
           video.load();
-          
-          video.addEventListener('canplaythrough', function() {
-            videoItem.classList.add('_active');
 
-            setTimeout(() => {
+          video.addEventListener('loadeddata', function() {
+            
+            video.addEventListener('canplaythrough', function() {
               
-              video.classList.add('_active');
-              video.play();
+              videoItem.classList.add('_active');
   
-              videoCheck = true;
-  
-            },200)
+              setTimeout(() => {
+                
+                video.classList.add('_active');
+                video.play();
+    
+                videoCheck = true;
+    
+              },200)
+            })
           })
-          
-
         }
 
       }

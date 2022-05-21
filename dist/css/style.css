@@ -132,7 +132,12 @@
   opacity: 1;
 }
 
+.who-are-you__project--radio-input:checked + .who-are-you__project--radio-label._loading {
+  color: var(--white);
+}
+
 .who-are-you__project--radio-label {
+  position: relative;
   display: inline-block;
   padding: 6px 16px;
   cursor: pointer;
@@ -146,6 +151,10 @@
       -ms-user-select: none;
           user-select: none;
   transition: color 0.2s ease-in-out;
+}
+
+.who-are-you__project--radio-label._loading {
+  color: var(--white);
 }
 
 .who-are-you__project--radio-label:hover {

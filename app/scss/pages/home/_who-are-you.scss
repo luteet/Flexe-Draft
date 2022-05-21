@@ -132,10 +132,18 @@
             }
         }
 
+        &--radio-input:checked + &--radio-label._loading {
+            color: var(--white);
+        }
+
         // .who-are-you__project--radio-label
 
         &--radio-label {
+            position: relative;
             display: inline-block;
+            &._loading {
+                color: var(--white);
+            }
             padding: 6px 16px;
             @include _768 {
                 padding: 7px 24px;
