@@ -83,8 +83,8 @@ const body = document.querySelector('body'),
 
 
 
-let thisTarget, faqCheck = true;
-let videoCheck = true;
+let thisTarget, faqCheck = true, projectLabelCheck = true;
+
 body.addEventListener('click', function (event) {
 
   thisTarget = event.target;
@@ -117,98 +117,43 @@ body.addEventListener('click', function (event) {
   if(projectLabel) {
     event.preventDefault();
     
-    let input = projectLabel.parentNode.querySelector('input');
-
+    let input               = projectLabel.parentNode.querySelector('input'),
+        imageItem           = document.querySelector('#' + projectLabel.dataset.id),
+        activeImageItem     = document.querySelector('._project-image-item._active'),
+        projectBlock        = document.querySelector(`._project-block[data-id="${projectLabel.dataset.id}"]`),
+        projectBlockParent  = document.querySelector(`._project-block`).parentNode,
+        activeProjectBlock  = document.querySelector(`._project-block._active`);
+    
     if(input) {
 
-      if(input.checked != true && videoCheck) {
+      if(input.checked != true && projectLabelCheck) {
 
         input.checked = true;
-        videoCheck = false;
+        projectLabelCheck = false;
 
-        let videoItem           = document.querySelector(`#${projectLabel.dataset.id}`),
-            video               = videoItem.querySelector(`._project-video`),
-            videoReverse        = videoItem.querySelector(`._project-video-reverse`),
-            activeVideoItem     = document.querySelector('._project-item._active'),
-            activeVideo         = (activeVideoItem) ? activeVideoItem.querySelector('._project-video') : false,
-            activeVideoReverse  = (activeVideoItem) ? activeVideoItem.querySelector('._project-video-reverse') : false;
-
-        if(activeVideoItem && activeVideo && activeVideoReverse) {
-          
-          projectLabel.insertAdjacentHTML('afterbegin', '<div class="loading-element lds-ring"><div></div><div></div><div></div><div></div></div>')
-          projectLabel.classList.add('_loading');
-          
-          activeVideoReverse.paybackRate = 1.5;
-          activeVideoReverse.play();
-          
-          setTimeout(() => {
-            activeVideoReverse.classList.add('_active');
-          },200)
+        if(activeImageItem) {
+          activeImageItem.classList.add('_removing');
+          activeProjectBlock.classList.remove('_active');
 
           setTimeout(() => {
-            activeVideo.classList.remove('_active');
-            video.load();
+            activeImageItem.classList.remove('_active');
+          },100)
+
+          setTimeout(() => {
+            activeProjectBlock.style.display = 'none';
+            projectBlock.style.display = 'block';
           },300)
-          
-          video.addEventListener('loadeddata', function() {
+
+          setTimeout(() => {
+            activeImageItem.classList.remove('_removing');
+            imageItem.classList.add('_active');
             
-            video.addEventListener('canplaythrough', function() {
-              
-              setTimeout(() => {
-
-                videoItem.classList.add('_active');
-                video.playbackRate = 1.5;
-                video.play();
-
-                video.addEventListener('playing', function() {
-                  
-                  setTimeout(() => {
-                    video.classList.add('_active');
-                  },100)
-    
-                  setTimeout(() => {
-                    activeVideoItem.classList.remove('_active');
-                    activeVideoReverse.classList.remove('_active');
-                  },200)
-                })
-
-                video.addEventListener('ended', function() {
-                  
-                  videoReverse.load();
-                  videoReverse.addEventListener('loadeddata', function() {
-                    videoReverse.addEventListener('canplaythrough', function() {
-                      videoCheck = true;
-                      if(projectLabel.querySelector('.loading-element')) projectLabel.querySelector('.loading-element').remove();
-                      projectLabel.classList.remove('_loading');
-                    });
-                  });
-                })
-                
-              },500);
-            })
+            projectBlock.classList.add('_active');
             
-          })
-
+            projectLabelCheck = true;
+          },400)
         } else {
-          video.load();
-          
-
-          video.addEventListener('loadeddata', function() {
-            
-            video.addEventListener('canplaythrough', function() {
-              
-              videoItem.classList.add('_active');
-  
-              setTimeout(() => {
-                
-                video.classList.add('_active');
-                video.play();
-    
-                videoCheck = true;
-    
-              },200)
-            })
-          })
+          imageItem.classList.add('_active');
         }
 
       }
@@ -314,7 +259,6 @@ body.addEventListener('click', function (event) {
       spaceBetween: 30,
       slidesPerView: 1,
 
-      /* loop: true, */
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -342,7 +286,6 @@ body.addEventListener('click', function (event) {
       rows: 3,
     },
 
-    /* loop: true, */
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -374,7 +317,6 @@ body.addEventListener('click', function (event) {
     spaceBetween: 30,
     slidesPerView: 1,
 
-    /* loop: true, */
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
